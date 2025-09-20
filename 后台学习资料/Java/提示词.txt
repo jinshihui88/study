@@ -1,0 +1,38 @@
+方法级生成：
+[目标]:创建一个完成【XXX功能】的方法
+[输入]:参数类型:【如@NonNull List<UserDTO>)
+[处理]:
+1.第一步:[【如过滤无效参数】
+2.第二步:【如转换数据格式】
+3.异常处理:【如 legalArgumentException 时...】
+[输出]:返回类型:【如 lmmutableList<String>】
+[约束]:
+使用 【Java 版本如 17】特性
+遵循【规范如阿里巴巴 Java 手册)
+避免【反模式如递归调用】
+
+
+类设计：
+[类名]:XxxService(遵循大驼峰)
+[职责]:负责【核心功能如订单核销】
+[字段]:
+-private final Map<KeyType, ValueType> cache
+@Autowired XxxRepository
+[方法]:
+1. public ResponseType methodA(@Valid ParamType):【功能要点】
+2. @Transactional void methodB():【事务规则】
+[依赖]:
+使用【库如 Guava】处理集合
+排除【过时库如 commons-lang2】
+
+性能导向模版
+// 生成高性能代码:
+"为以下方法提供时间复杂度 O(n)的优化版本:
+public static int[] findDuplicates(int[] nums) {
+// AI将优先考虑位运算或哈希表方案
+
+防御性编程模版
+[安全检查」:
+所有入参执行【校验如 Preconditions.checkArgument】
+避免返回【可修改对象如 new ArrayList<>()】
+资源释放:【try-with-resources 处理 IO 流】

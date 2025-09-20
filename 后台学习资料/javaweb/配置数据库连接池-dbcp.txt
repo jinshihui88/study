@@ -1,0 +1,75 @@
+tomcat5.5及以后版本中配置如下：
+（1）在tomcat的conf目录下，找到context.xml文件，写入如下内容：
+<Context path="/fgms" reloadable="true">
+            <Resource name="jdbc/fgms" 
+               auth="Container" 
+               type="javax.sql.DataSource"
+               maxActive="100" 
+               maxIdle="30" 
+               maxWait="10000"
+               username="ambow" 
+               password="orcl"                               	
+               driverClassName="oracle.jdbc.driver.OracleDriver"
+               url="jdbc:oracle:thin:@localhost:1521:orcl"/>
+</Context>
+
+	标签含义解释：
+
+	 属性 		描述 
+	name   指定JNDI的名字(在ResourceParams中的名字必须和Resource的name保持一致) 
+	factory   指定生成DataSource对象的factory的类名 
+	maxActive  指定数据库连接池中处于活动状态的数据库连接最大数目，0表示不受限制 
+	maxIdle      指定数据库连接池中处于空闲状态的数据库连接的最大数目，0表示不受限制 
+	maxWait    指定数据库连接池中的数据库连接处于空闲状态的最长时间（单位为毫秒），超过这一事件，将会抛出异常。-1表示可以无限期等待。 
+	username   指定连接数据库的用户名 
+	password   指定连接数据库的密码 
+	driverClassName   指定连接数据库的JDBC驱动程序 
+	url   指定连接数据库的URL 
+（2）然后在/%tomcat_home%/webapps/fgms(项目名称)/WEB-INF/web.xml文件中的<web-app></web-app>之间添加如下内容：
+	<resource-ref>
+	  <description>DB Connection</description>
+	  <res-ref-name>jdbc/fgms</res-ref-name>
+	  <res-type>javax.sql.DataSource </res-type>
+	  <res-auth>Container </res-auth>
+	</resource-ref>
+
+	标签含义解释：
+
+	  属性 		描述 
+	resource-ref  资源引用
+	description  对所引用资源的说明 
+	res-ref-name  指定所引用资源的JNDI名字，与<Resource>元素中的name属性保持一致 
+	res-type  指定所引用资源的类名字，与<Resource>元素中的type属性保持一致 
+	res-auth  指定所引用资源的Manager，与<Resource>元素中的auth属性保持一致
+（3）把Oracle的jar包拷贝到tomcat目录下的lib文件夹下。 
+（4）编码实现：
+创建一个JSP文件，
+<%@page import="java.sql.*"%> 
+<%@page import="javax.naming.*"%> 
+<%@page import="javax.sql.DataSource"%> 
+  //测试从数据库连接池获取数据库连接：
+		try {
+			Context initContext = new InitialContext();
+			DataSource ds = (DataSource) ctx.lookup("java:/comp/env/jdbc/demo"); 
+			Connection conn = ds.getConnection();
+			Statement stat = conn.createStatement();
+			ResultSet rs = stat.executeQuery("select * from emp");
+			while(rs.next()){
+				System.out.println("empno: " + rs.getInt("empno"));
+				System.out.println("empname: " + rs.getString("ename"));
+				System.out.println("job: " + rs.getString("job"));
+				System.out.println("hiredate: " + rs.getTimestamp("hiredate"));
+				System.out.println("salary: " + rs.getDouble("sal"));
+				System.out.println("comm: " + rs.getDouble("comm"));
+			}
+			
+			rs.close();
+			stat.close();
+			conn.close();
+		} catch (NamingException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+说明：测试必须在JSP页面中进行测试，不能在java文件中进行测试。程序要运行在Tomcat中才能找到相应的数据源。

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  
+  <!-- 图片验证码测试 -->
+  <servlet>
+  <servlet-name>CodeServlet</servlet-name>
+  <servlet-class>picCheckTest.CodeServlet</servlet-class>
+ </servlet>
+  <servlet-mapping>
+  <servlet-name>CodeServlet</servlet-name>
+  <url-pattern>/CodeServlet.code</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+    <servlet-name>CodeServlet1</servlet-name>
+    <servlet-class>picCheckTest.CodeServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CodeServlet1</servlet-name>
+    <url-pattern>/CodeServlet1.code</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

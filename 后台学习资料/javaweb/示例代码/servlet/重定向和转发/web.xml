@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd">
+
+  <servlet>
+  	<servlet-name>townReg</servlet-name>
+  	<servlet-class>s1.TownServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>townReg</servlet-name>
+  	<url-pattern>/townReg</url-pattern>
+  </servlet-mapping>
+  
+ <servlet>
+  	<servlet-name>cityReg</servlet-name>
+  	<servlet-class>s1.CityServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>cityReg</servlet-name>
+  	<url-pattern>/cityReg</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>proviceReg</servlet-name>
+  	<servlet-class>s1.ProvinceServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>proviceReg</servlet-name>
+  	<url-pattern>/proviceReg</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>centerReg</servlet-name>
+  	<servlet-class>s1.CenterServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>centerReg</servlet-name>
+  	<url-pattern>/centerReg</url-pattern>
+  </servlet-mapping>
+
+</web-app>

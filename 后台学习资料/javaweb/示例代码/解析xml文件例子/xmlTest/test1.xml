@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 外部DTD 
+<!DOCTYPE students SYSTEM "students.dtd">
+-->
+
+<!-- 内部DTD  
+<!DOCTYPE students[
+	<!ELEMENT students (student)* >
+	<!ELEMENT student (name,age,sex)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT age (#PCDATA)>
+	<!ELEMENT sex (#PCDATA)>
+]>
+-->
+
+<!-- 外部XSD -->
+<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:noNamespaceSchemaLocation="test3.xsd">
+	<student>
+		<name>war</name>
+		<age>18</age>
+		<sex>male</sex>
+		<!-- <dept>computer</dept> -->
+		<!-- <name>Eniyah</name> -->
+	</student>
+	
+	<student >
+		<name>fox</name>
+		<age>18</age>
+		<sex>female</sex>
+	</student>
+</students>

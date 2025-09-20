@@ -1,0 +1,4 @@
+create table con_table(
+       conid varchar2(10) primary key,
+       cons varchar2(50)
+)

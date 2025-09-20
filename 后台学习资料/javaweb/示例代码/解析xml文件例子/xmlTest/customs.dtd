@@ -1,0 +1,6 @@
+<!ELEMENT customs (custom)* >
+<!ELEMENT custom (name,address,telphone,fax) >
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT telphone (#PCDATA)>
+<!ELEMENT fax (#PCDATA)>

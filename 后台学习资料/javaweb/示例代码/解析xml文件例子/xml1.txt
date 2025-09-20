@@ -1,0 +1,705 @@
+（一）创建Document的基本操作
+
+/**
+  * xml基本操作
+  */
+ public void BaseOperation(){
+  //创建一个document
+  Document document=DocumentHelper.createDocument();
+  //创建根结点
+  Element root=document.addElement("root");
+  //为根结点添加一个book节点
+  Element book1=root.addElement("book");
+  //为book1添加属性type
+  book1.addAttribute("type","science");
+  //为book1添加name子节点
+  Element name1=book1.addElement("Name");
+  //并设置其name为"Java"
+  name1.setText("Java");
+  //为book1创建一个price节点,并设其价格为100
+  book1.addElement("price").setText("100");
+  
+  //为根结点添加第二个book节点，并设置该book节点的type属性
+  Element book2=root.addElement("book").addAttribute("type","science");
+  //为book1添加name子节点
+  Element name2=book2.addElement("Name");
+  //并设置其name为"Oracle"
+  name2.setText("Oracle");
+  //为book1创建一个price节点,并设其价格为200
+  book2.addElement("price").setText("200");
+  
+  //输出xml
+  System.out.println(document.asXML());
+ }
+
+调用BaseOperation，输出结果为：
+
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <book type="science">
+  <Name>Java</Name>
+  <price>100</price>
+ </book>
+ <book type="science">
+  <Name>Oracle</Name>
+  <price>200</price>
+ </book>
+</root>
+
+（二）根据一个符合Document格式的字符串来生成一个Document
+
+ /**将字符串转化为Document
+  * @param str  输入的字符串
+  * @return  生成的document
+  * @throws DocumentException
+  */
+ public Document parserStrtoDocument(String str) throws DocumentException{
+  Document document=DocumentHelper.parseText(str);
+  return document;
+ }
+
+调用示例：
+
+String str="<root><book type='science'><Name>Java</Name><price>100</price></book></root>";
+
+  Document document = parserStrtoDocument(str);
+  System.out.println(document.asXML());
+
+输出结果为：
+
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <book type="science">
+  <Name>Java</Name>
+  <price>100</price>
+ </book>
+</root>
+
+（三）取得xml节点属性的基本方法
+
+ /**
+  * 取得xml的节点和属性的值
+  * @throws DocumentException 
+  */
+ public void getBaseInfofromDocument() throws DocumentException{
+  String str="<root><book type='science'><Name>Java</Name><price>100</price></book></root>";
+  //生成一个Document
+  Document document = DocumentHelper.parseText(str);
+  //取得根结点
+  Element root=document.getRootElement();
+  //取得book节点
+  Element book=root.element("book");
+  //取得book节点的type属性的值
+  String type=book.attributeValue("type");
+  //取得Name节点
+  Element name=book.element("Name");
+  //取得书名
+  String bookname=name.getText();
+  //取得书的价钱
+  int price=Integer.parseInt(book.element("price").getText());
+  
+  //输出书目信息
+  System.out.println("书名："+bookname);
+  System.out.println("所属类别："+type);
+  System.out.println("价格："+price);
+ }
+
+调用getBaseInfofromDocument，输出结果为：
+
+书名：Java
+所属类别：science
+价格：100
+
+（四）利用迭代，xpath取得节点及其属性值
+
+ /**利用迭代，xpath取得xml的节点及其属性值
+  * @throws DocumentException
+  */
+ public void getComplexInfofromDocument() throws DocumentException{
+
+
+  String str="<root><book type='science'><Name>Java</Name><price>100</price></book>"
+   +"<book type='science'><Name>Oracle</Name><price>120</price></book>"
+   +"<book type='society'><Name>Society security</Name><price>130</price></book>"
+   +"<author><name>chb</name></author></root>";
+  //生成一个Document
+  Document document = DocumentHelper.parseText(str);
+  
+  //提取类型为"society"的书
+  //此处需要添加支持xpath的jar包，详细见备注
+  Element society_book=(Element)document.selectSingleNode("/root/book[@type='society']");
+  System.out.println(society_book.asXML());
+  
+  //提取价格节点的列表
+  System.out.println("-----------价格列表-------------");
+  List price=document.selectNodes("//price");
+  for(int i=0;i<price.size();i++){
+   Element elem_price=(Element)price.get(i);
+   System.out.println(elem_price.getText());
+  }
+  
+  //循环根结点下的所有节点，若当前节点为book，则输出这本书的详细信息
+  System.out.println("-------------书目详情------------");
+  System.out.println("书名\t\t类别\t\t价格");
+  Element root=document.getRootElement();
+  Iterator iterator=root.elementIterator();
+  while(iterator.hasNext()){
+   Element element=(Element)iterator.next();
+   if(element.getName().equals("book")){
+    System.out.print(element.element("Name").getText()+"\t");
+    System.out.print(element.attributeValue("type")+"\t\t");
+    System.out.print(element.element("price").getText()+"\n");
+   }
+  }
+
+  //查找作者姓名
+  Element author=(Element)document.selectSingleNode("//author");
+  System.out.println("---------"+author.element("name").getText()+"----------");
+  //提取作者的所有书目名称
+  Iterator iterator_book=root.elementIterator("book");  
+  while(iterator_book.hasNext()){
+   Element book=(Element)iterator_book.next();
+   System.out.print(book.element("Name").getText()+"\t");
+  }
+  
+  //属性迭代
+  System.out.println("\n-------属性迭代--------");
+  String str1="<book type='science' name='Java' price='100'/>";
+  Document document1=DocumentHelper.parseText(str1);
+  //开始迭代
+  Iterator iterator_attribute=document1.getRootElement().attributeIterator();
+  while(iterator_attribute.hasNext()){
+   //提取当前属性
+   Attribute attribute=(Attribute)iterator_attribute.next();
+   System.out.println(attribute.getName()+":"+attribute.getValue());
+  }
+ }
+
+调用getComplexInfofromDocument，输出结果为：
+
+<book type="society"><Name>Society security</Name><price>130</price></book>
+-----------价格列表-------------
+100
+120
+130
+-------------书目详情------------
+书名  类别  价格
+Java science  100
+Oracle science  120
+Society security society  130
+---------chb----------
+Java Oracle Society security 
+-------属性迭代--------
+type:science
+name:Java
+price:100
+
+备注：调用该方法之前，应该先向工程中添加支持xpath的jar包，否则，会出现以下错误：
+
+java.lang.NoClassDefFoundError: org/jaxen/JaxenException
+ at org.dom4j.DocumentFactory.createXPath(DocumentFactory.java:230)
+ at org.dom4j.tree.AbstractNode.createXPath(AbstractNode.java:207)
+ at org.dom4j.tree.AbstractNode.selectSingleNode(AbstractNode.java:183)
+ at xml_chb.dom4j_chb.getComplexInfofromDocument(dom4j_chb.java:82)
+ at xml_chb.dom4j_chb.main(dom4j_chb.java:92)
+Exception in thread "main" 
+
+只需要引入jaxen包就行了，我使用的是hibernate包中的jaxen-1.1-beta-7.jar包。
+
+
+
+    /** *//**移除节点和属性的操作
+     * @throws DocumentException
+     */
+    public void RemoveOperator() throws DocumentException...{
+        //待生成xml的字符串
+        String str="<root><book type='science'><Name>Java</Name><price>100</price></book>"
+            +"<book type='society'><Name>Society security</Name><price>130</price></book>"
+            +"<author><name>chb</name><sex>boy</sex></author></root>";
+        //生成一个Document
+        Document document = DocumentHelper.parseText(str);
+        
+        Element root=document.getRootElement();
+        //删除类型为society的book节点
+        Element book_society=(Element)document.selectSingleNode("//book[@type='society']");
+        root.remove(book_society);
+        System.out.println("1。正确的删除了类型为society的book节点");
+        System.out.println(document.asXML());
+        
+        //删除sex节点
+        Element sex=(Element)root.selectSingleNode("//sex");
+        
+        //从root节点删除
+        root.remove(sex);
+        System.out.println("2。这样是不能删除sex节点的");
+        System.out.println(document.asXML());
+        
+        //从author节点删除
+        root.element("author").remove(sex);
+        System.out.println("3。这样就可以正确删除sex节点");
+        System.out.println(document.asXML());
+        
+        //删除属性
+        Attribute type=root.element("book").attribute("type");
+        root.element("book").remove(type);
+        System.out.println("4。正确删除book节点的type属性");
+        System.out.println(document.asXML());
+    }
+输出结果为：
+
+1。正确的删除了类型为society的book节点
+<?xml version="1.0" encoding="UTF-8"?>
+<root><book type="science"><Name>Java</Name><price>100</price></book><author><name>chb</name><sex>boy</sex></author></root>
+2。这样是不能删除sex节点的
+<?xml version="1.0" encoding="UTF-8"?>
+<root><book type="science"><Name>Java</Name><price>100</price></book><author><name>chb</name><sex>boy</sex></author></root>
+3。这样就可以正确删除sex节点
+<?xml version="1.0" encoding="UTF-8"?>
+<root><book type="science"><Name>Java</Name><price>100</price></book><author><name>chb</name></author></root>
+4。正确删除book节点的type属性
+<?xml version="1.0" encoding="UTF-8"?>
+<root><book><Name>Java</Name><price>100</price></book><author><name>chb</name></author></root>
+
+
+分析：
+
+第二个输出结果不能删除sex节点，我们需要看dom4j的API
+
+remove
+public boolean remove(Element element)Removes the given Element if the node is an immediate child of this branch. If the given node is not an immediate child of this branch then the Node.detach()method should be used instead. 
+ 
+
+Parameters: 
+element - is the element to be removed 
+Returns: 
+true if the element was removed
+从中我们可以看出，remove只能用在它自己的直接孩子节点上，不能用在孙子节点上，因为sex节点不是root节点的直接孩子节点，所以不能删除；而sex节点却是author节点的直接孩子节点，所以第三个输出可以删除。
+
+（二）将两个Document合并为一个Document
+
+先看一个错误的情况
+
+（1）使用add()方法添加
+
+public void CombineDocument() throws DocumentException...{
+        //待生成两个Document的字符串
+        String str_book="<root><book type='science'><Name>Java</Name><price>100</price></book>"
+            +"<book type='society'><Name>Society security</Name><price>130</price></book>"
+            +"</root>";
+        String str_author="<root><author><name>chb</name><sex>boy</sex></author></root>";
+        
+        //生成两个Document
+        Document doc_book=DocumentHelper.parseText(str_book);
+        Document doc_author=DocumentHelper.parseText(str_author);
+        
+        //取出doc_author的author节点，添加到doc_book的根结点
+        Element author=(Element)doc_author.selectSingleNode("//author");
+        doc_book.getRootElement().add(author);
+        System.out.println(doc_book.asXML());
+    }
+调用CombineDocument函数，会出现以下错误：
+
+org.dom4j.IllegalAddException: The node "org.dom4j.tree.DefaultElement@17bd6a1 [Element: <author attributes: []/>]" could not be added to the element "root" because: The Node already has an existing parent of "root"
+ at org.dom4j.tree.AbstractElement.addNode(AbstractElement.java:1521)
+ at org.dom4j.tree.AbstractElement.add(AbstractElement.java:1002)
+ at xml_chb.dom4j_chb.CombineDocument(dom4j_chb.java:189)
+ at xml_chb.dom4j_chb.main(dom4j_chb.java:199)
+Exception in thread "main" 
+
+即提示author节点已经有一个root节点了，不能再添加到另一个节点上去。
+
+（2）使用appendContent()方法
+
+即将doc_book.getRootElement().add(author);
+
+改为：doc_book.getRootElement().appendContent(author);
+
+输出结果为：
+
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<book type="science"><Name>Java</Name><price>100</price></book>
+<book type="society"><Name>Society security</Name><price>130</price></book>
+<name>chb</name><sex>boy</sex>
+</root>
+
+可以看出，缺少了author节点，只是把author节点的子节点添加上去了，但是由此可见，appendContent方法是有希望的。
+
+我们看一下dom4j的API:
+
+appendContent
+public void appendContent(Branch branch)Appends the content of the given branch to this branch instance. This method behaves like the Collection.addAll(java.util.Collection) method. 
+ 
+
+Parameters: 
+branch - is the branch whose content will be added to me.
+
+--------------------------------------------------------------------------------
+
+（3）使用正确的appendContent方法
+
+将：Element author=(Element)doc_author.selectSingleNode("//author");
+
+doc_book.getRootElement().appendContent(author);
+
+改为：doc_book.getRootElement().appendContent(doc_author.getRootElement());
+
+输出：
+
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<book type="science"><Name>Java</Name><price>100</price></book>
+<book type="society"><Name>Society security</Name><price>130</price></book>
+<author><name>chb</name><sex>boy</sex></author>
+</root>
+
+是正确结果
+
+（4）另一种可行的方法
+
+public void CombineDocument() throws DocumentException...{
+        //待生成两个Document的字符串
+        String str_book="<root><book type='science'><Name>Java</Name><price>100</price></book>"
+            +"<book type='society'><Name>Society security</Name><price>130</price></book>"
+            +"</root>";
+        String str_author="<root><author><name>chb</name><sex>boy</sex></author></root>";
+        
+        //生成两个Document
+        Document doc_book=DocumentHelper.parseText(str_book);
+        Document doc_author=DocumentHelper.parseText(str_author);
+        
+        //新生成一个Document
+        Element author=DocumentHelper.createElement("author");
+        author.appendContent((Element)doc_author.selectSingleNode("//author"));
+        //当前author尚无父节点，所以可以使用add方法添加
+        doc_book.getRootElement().add(author);
+
+        System.out.println(doc_book.asXML());
+    }
+
+
+包括三个文件：studentInfo.xml(待解析的xml文件), Dom4jReadExmple.java(解析的主要类), TestDom4jReadExmple.java(测试解析的结果) （由于使用csdn blog自带的代码粘贴工具会朝里加入一些"..."字符，虽然利于查看，但是不利于把代码copy出来运行，而亲自运行代码对程序员来说是很重要的，故没有使用csdn blog自带的代码粘贴工具来插入代码，而是用着用直白的方式）：
+
+ studentInfo.xml
+
+<?xml version="1.0" encoding="gb2312"?>
+<students>
+    <student age="25"><!--如果没有age属性，默认的为20-->
+        <name>崔卫兵</name>
+        <college>PC学院</college>
+        <telephone>62354666</telephone>
+        <notes>男,1982年生,硕士，现就读于北京邮电大学</notes>
+    </student>
+    <student>
+        <name>cwb</name>
+        <college leader="leader1">PC学院</college><!--如果没有leader属性，默认的为leader-->
+        <telephone>62358888</telephone>
+        <notes>男,1987年生,硕士，现就读于中国农业大学</notes>
+    </student>
+    <student age="45">
+        <name>xxxxx</name>
+        <college leader="">xxx学院</college>
+        <telephone>66666666</telephone>
+        <notes>注视中，注释中</notes>
+    </student>
+    <student age="">
+        <name>yyyyyy</name>
+        <college leader="学院领导">yyyy学院</college>
+        <telephone>88888888</telephone>
+        <notes>注视中111，注释中222</notes>
+    </student>
+</students>
+
+Dom4jReadExmple.java
+
+package dom4jExample.read;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
+import org.dom4j.Attribute;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+/**
+ * 利用dom4j与XPath进行XML编程
+ * @author cuiweibing
+ * @since 2007.8.10
+ */
+public class Dom4jReadExmple {
+
+ /**
+  * 利用XPath操作XML文件，打印指定节点或者属性的值
+  * @param filename String 待操作的XML文件（相对路径或者绝对路径）
+  */
+ public void printSelectedNodeValue(String filename){
+  try {
+   SAXReader saxReader = new SAXReader();
+   Document document = saxReader.read(new File(filename));
+   //打印所有student节点的属性age值，如果有的话
+   List list = document.selectNodes("/students/student/@age");
+   Iterator iter = list.iterator();
+   while (iter.hasNext()) {
+    Attribute attribute = (Attribute) iter.next();
+    System.out.println("/students/student/@age："+attribute.getValue());
+   }
+      //打印所有college节点值，如果有的话
+   list = document.selectNodes("/students/student");
+   iter = list.iterator();
+   while (iter.hasNext()) {
+     Element bookElement = (Element) iter.next();
+     Iterator iterator = bookElement.elementIterator("college");
+     while (iterator.hasNext()) {
+      Element titleElement = (Element) iterator.next();
+      System.out.println("/students/student/college："+titleElement.getText());
+     }
+   }
+   //测试节点的一些方法
+   list = document.selectNodes("//telephone");
+   iter = list.iterator();
+   while (iter.hasNext()) {
+     Element titleElement = (Element) iter.next();
+     System.out.print("//telephone：getName:"+titleElement.getName());
+     System.out.print("  ##getNodeType:"+titleElement.getNodeType());
+     System.out.print("  ##getTextTrim:"+titleElement.getTextTrim());
+     System.out.print("  ##getNamespaceURI:"+titleElement.getNamespaceURI());
+     System.out.print("  ##getNodeTypeName:"+titleElement.getNodeTypeName());
+     System.out.print("  ##getQualifiedName:"+titleElement.getQualifiedName());
+     System.out.print("  ##getUniquePath:"+titleElement.getUniquePath());
+     System.out.println("  ##getPath:"+titleElement.getPath());
+   }
+   //打印所有name节点值，如果有的话，与上面college的取法不一样
+   list = document.selectNodes("/students/student/name");
+   iter = list.iterator();
+   while (iter.hasNext()) {
+    Element titleElement = (Element) iter.next();
+    System.out.println("/students/student/name："+titleElement.getText());
+  }
+  } catch (Exception ex) {
+   ex.printStackTrace();
+  }
+ }
+}
+
+TestDom4jReadExmple.java
+
+package dom4jExample.read;
+
+/**
+ * 测试Dom4jReadExmple解析的情况
+ * @author cuiweibing
+ * @since 2007.8.10
+ */
+public class TestDom4jReadExmple {
+ public static void main(String[] args) {
+     try{
+       Dom4jReadExmple drb=new Dom4jReadExmple();
+       //利用XPath操作XML文件，打印想要的属性值
+       drb.printSelectedNodeValue("studentInfo.xml");
+     }catch(Exception ex){
+       ex.printStackTrace();
+     }
+   }
+}
+
+
+运行结果
+
+/students/student/@age：25
+/students/student/@age：45
+/students/student/@age：
+/students/student/college：PC学院
+/students/student/college：PC学院
+/students/student/college：xxx学院
+/students/student/college：yyyy学院
+//telephone：getName:telephone  ##getNodeType:1  ##getTextTrim:62354666  ##getNamespaceURI:  ##getNodeTypeName:Element  ##getQualifiedName:telephone  ##getUniquePath:/students/student[1]/telephone  ##getPath:/students/student/telephone
+//telephone：getName:telephone  ##getNodeType:1  ##getTextTrim:62358888  ##getNamespaceURI:  ##getNodeTypeName:Element  ##getQualifiedName:telephone  ##getUniquePath:/students/student[2]/telephone  ##getPath:/students/student/telephone
+//telephone：getName:telephone  ##getNodeType:1  ##getTextTrim:66666666  ##getNamespaceURI:  ##getNodeTypeName:Element  ##getQualifiedName:telephone  ##getUniquePath:/students/student[3]/telephone  ##getPath:/students/student/telephone
+//telephone：getName:telephone  ##getNodeType:1  ##getTextTrim:88888888  ##getNamespaceURI:  ##getNodeTypeName:Element  ##getQualifiedName:telephone  ##getUniquePath:/students/student[4]/telephone  ##getPath:/students/student/telephone
+/students/student/name：崔卫兵
+/students/student/name：cwb
+/students/student/name：xxxxx
+/students/student/name：yyyyyy
+
+
+
+
+
+Trackback: http://tb.blog.csdn.net/TrackBack.aspx?PostId=1735655
+
+
+包括三个文件：studentInfo.xml(待解析的xml文件), Dom4jReadExmple.java(解析的主要类), TestDom4jReadExmple.java(测试解析的结果) （由于使用csdn blog自带的代码粘贴工具会朝里加入一些"..."字符，虽然利于查看，但是不利于把代码copy出来运行，而亲自运行代码对程序员来说是很重要的，故没有使用csdn blog自带的代码粘贴工具来插入代码，而是用着用直白的方式）：
+
+ studentInfo.xml
+
+<?xml version="1.0" encoding="gb2312"?>
+<students>
+    <student age="25"><!--如果没有age属性，默认的为20-->
+        <name>崔卫兵</name>
+        <college>PC学院</college>
+        <telephone>62354666</telephone>
+        <notes>男,1982年生,硕士，现就读于北京邮电大学</notes>
+    </student>
+    <student>
+        <name>cwb</name>
+        <college leader="学院领导">PC学院</college><!--如果没有leader属性，默认的为leader-->
+        <telephone>62358888</telephone>
+        <notes>男,1987年生,硕士，现就读于中国农业大学</notes>
+    </student>
+    <student age="45">
+        <name>xxxxx</name>
+        <college leader="">xxx学院</college>
+        <telephone>66666666</telephone>
+        <notes>注视中，注释中</notes>
+    </student>
+    <student age="">
+        <name>lxx</name>
+        <college>yyyy学院</college>
+        <telephone>88888888</telephone>
+        <notes>注视中111，注释中222</notes>
+    </student>
+</students>
+
+Dom4jReadExmple.java
+
+package dom4jExample.read;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
+import org.dom4j.Attribute;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+/**
+ * 利用dom4j与XPath进行XML编程
+ * @author cuiweibing
+ * @since 2007.8.10
+ */
+public class Dom4jReadExmple {
+ /**
+  * 利用XPath操作XML文件，获取指定节点或者属性的值，并放入HashMap中
+  * @param filename String 待操作的XML文件（相对路径或者绝对路径）
+  * @param hm       HashMap 存放选择的结果，格式：<nodename,nodevalue>或者<nodename+attrname,attrvalue>
+  */
+ public void getSelectedNodeValue(String filename,HashMap<String,String> hm){
+  try {
+   SAXReader saxReader = new SAXReader();
+   Document document = saxReader.read(new File(filename));
+   //获取学生姓名为"崔卫兵"的年龄
+   List list = document.selectNodes("/students/student[name=\"崔卫兵\"]/@age");
+   Iterator iter = list.iterator();
+   if (iter.hasNext()) {
+    Attribute attribute = (Attribute) iter.next();
+    hm.put("崔卫兵-"+attribute.getName(), attribute.getValue());
+   }else{
+    hm.put("崔卫兵-age", "20");
+   }
+   //获取学生姓名为"崔卫兵"的年龄
+   list = document.selectNodes("/students/student[name=\"cwb\"]/@age");
+   iter = list.iterator();
+   if (iter.hasNext()) {
+    Attribute attribute = (Attribute) iter.next();
+    hm.put("cwb-"+attribute.getName(), attribute.getValue());
+   }else{
+    hm.put("cwb-age", "20");
+   }
+      //获取学生姓名为"cwb"所在的学院名称
+   list = document.selectNodes("/students/student[name=\"cwb\"]/college");
+   iter = list.iterator();
+   if (iter.hasNext()) {
+     Element element = (Element) iter.next();
+     String name = element.getName();
+     String value = element.getText();
+     hm.put("cwb-"+name, value);
+   }
+   //获取学生姓名为"cwb"所在学院的领导
+   list = document.selectNodes("/students/student[name=\"cwb\"]/college/@leader");
+   iter = list.iterator();
+   if (iter.hasNext()) {
+    Attribute attribute = (Attribute) iter.next();
+    hm.put("cwb-college-"+attribute.getName(), attribute.getValue());
+   }else{
+    hm.put("cwb-college-leader", "leader");
+   }
+   //获取学生姓名为"lxx"所在的学院名称
+   list = document.selectNodes("/students/student[name=\"lxx\"]/college");
+   iter = list.iterator();
+   if (iter.hasNext()) {
+     Element element = (Element) iter.next();
+     String name = element.getName();
+     String value = element.getText();
+     hm.put("lxx-"+name, value);
+   }
+   //获取学生姓名为"lxx"所在学院的领导
+   list = document.selectNodes("/students/student[name=\"lxx\"]/college/@leader");
+   iter = list.iterator();
+   if (iter.hasNext()) {
+    Attribute attribute = (Attribute) iter.next();
+    hm.put("lxx-college-"+attribute.getName(), attribute.getValue());
+   }else{
+    hm.put("lxx-college-leader", "leader");
+   }
+  } catch (Exception ex) {
+   ex.printStackTrace();
+  }
+ }
+}
+
+
+TestDom4jReadExmple.java
+
+package dom4jExample.read;
+
+import java.util.HashMap;
+
+/**
+ * 测试Dom4jReadExmple解析的情况
+ * @author cuiweibing
+ * @since 2007.8.10
+ */
+public class TestDom4jReadExmple {
+ public static void main(String[] args) {
+     try{
+       //获取解析完后的解析信息
+       HashMap<String,String> hashMap;
+       Dom4jReadExmple drb=new Dom4jReadExmple();
+       //利用XPath操作XML文件，获取想要的属性值
+       hashMap = new HashMap<String,String>();
+       drb.getSelectedNodeValue("studentInfo.xml", hashMap);
+       System.out.println("崔卫兵-age:"+hashMap.get("崔卫兵-age"));
+       System.out.println("cwb-age:"+hashMap.get("cwb-age"));
+       System.out.println("cwb-college:"+hashMap.get("cwb-college"));
+       System.out.println("cwb-college-leader:"+hashMap.get("cwb-college-leader"));
+       System.out.println("lxx-college:"+hashMap.get("lxx-college"));
+       System.out.println("lxx-college-leader:"+hashMap.get("lxx-college-leader"));
+     }catch(Exception ex){
+       ex.printStackTrace();
+     }
+   }
+}
+
+
+
+运行结果
+
+崔卫兵-age:25
+cwb-age:20
+cwb-college:PC学院
+cwb-college-leader:学院领导
+lxx-college:yyyy学院
+lxx-college-leader:leader
+
+ 
+
+
+
+
+Trackback: http://tb.blog.csdn.net/TrackBack.aspx?PostId=1735745
+
+
+

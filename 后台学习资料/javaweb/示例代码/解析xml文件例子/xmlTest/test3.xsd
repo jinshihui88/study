@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="name">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[a-z]{3}">
+				</xs:pattern>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="sex" type="sexType" />
+	<xs:simpleType name="sexType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="male"></xs:enumeration>
+			<xs:enumeration value="female"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:element name="age" >
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="1" />
+				<xs:maxInclusive value="100" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="password" type="sexType">
+	</xs:element>
+	
+	<xs:element name="student">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="name"></xs:element>
+				<xs:element ref="age"></xs:element>
+				<xs:element ref="sex"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="teacher">
+		<xs:complexType>
+			<!--  <xs:complexContent>
+				<xs:extension base="sexType">
+					<xs:sequence>
+						<xs:element name="female" type="xs:string"></xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+			-->
+			
+			<xs:attribute name="kc" type="xs:string">
+			</xs:attribute> 
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="students">		
+		<xs:complexType >
+			<xs:sequence >
+				<xs:element ref="student" maxOccurs="unbounded" ></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

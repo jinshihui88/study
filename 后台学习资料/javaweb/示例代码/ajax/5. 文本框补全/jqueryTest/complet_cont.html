@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="/servletExam2/jquery/jquery-1.8.0.min.js"></script>
+
+<script type="text/javascript">
+	
+	$(function(){
+		$("#btn").bind("click",function(){
+			cpl();
+		});
+	});
+	function cpl(){
+		$.post("/servletExam2/complajax.cn",//url
+				{"news_cont":$("#cn").val()},//请求参数
+				function(ns){//回调
+					//alert("ns is: " + ns);
+					
+					var $mes=$("#mes");
+					if(ns.length==0){
+						$mes.hide();
+						return;
+					}	
+					$mes.show();
+					var news="";
+					for(i=0;i<ns.length;i++){
+						news+=ns[i].content+"<br/>"
+					}
+					$mes.html(news);
+				},	
+				"json"//返回的数据格式
+				);
+	}
+</script>
+<style type="text/css">
+	#lv1{
+		position: absolute;
+		top:30px;
+		left:200px;
+	}
+	.txt{
+		border:1px solid black;
+		width: 200px;
+	}
+	#mes{
+		position: absolute;
+		top:24px;
+		left:0px;
+		width:204px;
+		height:0px;
+		background-color:transparent;
+		 
+		border:1px solid blue;
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<div id="lv1">
+		<input class="txt" type="text" id="cn" onkeyup="cpl();"></input><input type="button"  value="text" id="btn"/>
+		<p id="mes"></p>
+	</div>
+</body>
+</html>

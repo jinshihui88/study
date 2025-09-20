@@ -1,0 +1,11 @@
+<script>
+   function test1(){
+      var price=document.getElementById("gprice");		
+      var num=/^(([1-9]+[0-9]*.{1}[0-9]+)|([0].{1}[1-9]+[0-9]*)|([1-9][0-9]*)|([0][.][0-9]+[1-9]*))$/;	
+      if(num.test(price)){
+	alert("true aaaa");
+      }else{
+	alert("true bbbbb");
+      }
+   }
+</script>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>_web_talk</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ToRoomServlet</display-name>
+    <servlet-name>ToRoomServlet</servlet-name>
+    <servlet-class>com.guigu.servlet.ToRoomServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ToRoomServlet</servlet-name>
+    <url-pattern>/toroom.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SendMesServlet</display-name>
+    <servlet-name>SendMesServlet</servlet-name>
+    <servlet-class>com.guigu.servlet.SendMesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SendMesServlet</servlet-name>
+    <url-pattern>/send.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RefleshServlet</display-name>
+    <servlet-name>RefleshServlet</servlet-name>
+    <servlet-class>com.guigu.servlet.RefleshServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RefleshServlet</servlet-name>
+    <url-pattern>/reflesh.do</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,521 @@
+<!--  Example Server Configuration File  --> 
+ <!--  Tomcat服务器配置示例文件  --> 
+ 
+ <!--  Note that component elements are nested corresponding to their
+     parent-child relationships with each other  --> 
+ <!--  注意，这些组件的构成是根据相互之间的父子关系进行嵌套的。 --> 
+ 
+ <!--  A "Server" is a singleton element that represents the entire JVM,
+     which may contain one or more "Service" instances. The Server
+     listens for a shutdown command on the indicated port.
+
+     Note: A "Server" is not itself a "Container", so you may not
+     define subcomponents such as "Valves" or "Loggers" at this level.
+  --> 
+ <!--  一个“Server”是一个提供完整的JVM的独立组件，它可以包含一个或多个
+     “Service”实例。服务器在指定的端口上监听shutdown命令。
+     
+     注意：一个“Server”自身不是一个“Container”（容器），因此在这里你
+     不可以定义诸如“Valves”或者“Loggers”子组件
+ --> 
+ 
+ < Server  port ="8005"  shutdown ="SHUTDOWN"  debug ="0" > 
+ 
+ 
+   <!--  Comment these entries out to disable JMX MBeans support  --> 
+   <!--  这些指令组件关闭JMX MBeans支持  --> 
+  
+   <!--  You may also configure custom components (e.g. Valves/Realms) by
+       including your own mbean-descriptor file(s), and setting the
+       "descriptors" attribute to point to a ';' seperated list of paths
+       (in the ClassLoader sense) of files to add to the default list.
+       e.g. descriptors="/com/myfirm/mypackage/mbean-descriptor.xml"
+   --> 
+   <!--  你也可以通过包含你自己的mbean描述文件配置自定义的组件，然后设置
+       “descriptors”属性为以“；”为分隔的文件名列表严将它添加到默认列表
+       中，例如：descriptors="/com/myfirm/mypackage/mbean-descriptor.xml"。
+  --> 
+       
+   < Listener  className ="org.apache.catalina.mbeans.ServerLifecycleListener" 
+            debug ="0" /> 
+   < Listener  className ="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" 
+            debug ="0" /> 
+ 
+   <!--  Global JNDI resources  --> 
+   <!--  全局JNDI资源  --> 
+   < GlobalNamingResources > 
+ 
+     <!--  Test entry for demonstration purposes  --> 
+     <!--  出于示例目的的测试入口  --> 
+     < Environment  name ="simpleValue"  type ="java.lang.Integer"  value ="30" /> 
+ 
+     <!--  Editable user database that can also be used by
+         UserDatabaseRealm to authenticate users  --> 
+     <!--  可编辑的，用来通过UserDatabaseRealm认证用户的用户数据库  --> 
+    
+     < Resource  name ="UserDatabase"  auth ="Container" 
+              type ="org.apache.catalina.UserDatabase" 
+       description ="User database that can be updated and saved" > 
+     </ Resource > 
+     < ResourceParams  name ="UserDatabase" > 
+       < parameter > 
+         < name > factory </ name > 
+         < value > org.apache.catalina.users.MemoryUserDatabaseFactory </ value > 
+       </ parameter > 
+       < parameter > 
+         < name > pathname </ name > 
+         < value > conf/tomcat-users.xml </ value > 
+       </ parameter > 
+     </ ResourceParams > 
+ 
+   </ GlobalNamingResources > 
+ 
+   <!--  A "Service" is a collection of one or more "Connectors" that share
+       a single "Container" (and therefore the web applications visible
+       within that Container). Normally, that Container is an "Engine",
+       but this is not required.
+
+       Note: A "Service" is not itself a "Container", so you may not
+       define subcomponents such as "Valves" or "Loggers" at this level.
+    --> 
+   <!--  一个“Service”是一个或多个共用一个单独“Container”(容器)的“Connectors”
+       组合（因此，应用程序在容器中可见）。通常，这个容器是一个“Engine”
+       （引擎），但这不是必须的。
+       
+       注意：一个“Service”自身不是一个容器，因此，在这个级别上你不可定义
+       诸如“Valves”或“Loggers”子组件。
+   --> 
+ 
+   <!--  Define the Tomcat Stand-Alone Service  --> 
+   <!--  定义Tomcat的标准独立服务  --> 
+   < Service  name ="Catalina" > 
+ 
+     <!--  A "Connector" represents an endpoint by which requests are received
+         and responses are returned. Each Connector passes requests on to the
+         associated "Container" (normally an Engine) for processing.
+
+         By default, a non-SSL HTTP/1.1 Connector is established on port 8080.
+         You can also enable an SSL HTTP/1.1 Connector on port 8443 by
+         following the instructions below and uncommenting the second Connector
+         entry. SSL support requires the following steps (see the SSL Config
+         HOWTO in the Tomcat 5 documentation bundle for more detailed
+         instructions):
+         * If your JDK version 1.3 or prior, download and install JSSE 1.0.2 or
+           later, and put the JAR files into "$JAVA_HOME/jre/lib/ext".
+         * Execute:
+             %JAVA_HOME%\bin\keytool -genkey -alias tomcat -keyalg RSA (Windows)
+             $JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA (Unix)
+           with a password value of "changeit" for both the certificate and
+           the keystore itself.
+
+         By default, DNS lookups are enabled when a web application calls
+         request.getRemoteHost(). This can have an adverse impact on
+         performance, so you can disable it by setting the
+         "enableLookups" attribute to "false". When DNS lookups are disabled,
+         request.getRemoteHost() will return the String version of the
+         IP address of the remote client.
+     --> 
+     <!--  一个“Connector”（连接器）代表一个请求被接收和应答所需要的端点。每个连
+         接器通过相关的“Container”（容器）处理请求。
+         
+         默认情况下，一个非SSL的HTTP/1.1的连接器被绑定在端口8080。你也可以通过
+         根据后面的使用说明并取消第二个连接器入口的注释，在端口8443上建立一个
+         SSL HTTP/1.1的连接器。开放SSL支持需要下面几步（参见Tomcat 5文档中怎样
+         配置SSL的说明以取得更多的详细信息）：
+         * 如果你的JDK是1.3或1.3以前的版本，下载安装JSSE 1.0.2或以后版本，并放
+           置JAR文件到“$JAVA_HOME/jre/lib/ext”目录下。
+         * 带一个“changeit”的口令值执行：
+             %JAVA_HOME%\bin\keytool -genkey -alias tomcat -keyalg RSA (Windows)
+             $JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA (UNIX)
+           来生成它自己的证书私钥。
+           
+         默认情况下，当一个web应用程序调用请求时，DNS查询是可行的。这将对性能造
+         成一些不利的影响，因此，你可以将“enableLookups”设置为“false”来关闭DNS
+         查询。当DNS查询被关闭时，request.getRemoteHost()将返回包含远程客户IP地
+         址的字符串。
+   --> 
+ 
+     <!--  Define a non-SSL Coyote HTTP/1.1 Connector on port 8080  --> 
+     <!--  在8080端口上定义一个非SSL的HTTP/1.1连接器  --> 
+     < Connector  port ="8080" 
+               maxThreads ="150"  minSpareThreads ="25"  maxSpareThreads ="75" 
+               enableLookups ="false"  redirectPort ="8443"  acceptCount ="100" 
+               debug ="0"  connectionTimeout ="20000" 
+               disableUploadTimeout ="true"   /> 
+     <!--  Note : To disable connection timeouts, set connectionTimeout value
+     to 0  --> 
+     <!--  注意，要关闭连接超时，将connectionTimeout设置为0  --> 
+ 
+ <!--  Note : To use gzip compression you could set the following properties :
+
+compression="on"
+compressionMinSize="2048"
+noCompressionUserAgents="gozilla, traviata"
+compressableMimeType="text/html,text/xml"
+ --> 
+ <!--  注意：要使用gzip压缩需要设置如下属性：
+
+compression="on"
+compressionMinSize="2048"
+noCompressionUserAgents="gozilla,traviata"
+compressableMimeType="text/html,text/xml"
+ --> 
+ 
+     <!--  Define a SSL Coyote HTTP/1.1 Connector on port 8443  --> 
+     <!--  在端口8443上定义一个SSL的HTTP/1.1的连接器  --> 
+     <!-- 
+    <Connector port="8443"
+               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+               enableLookups="false" disableUploadTimeout="true"
+               acceptCount="100" debug="0" scheme="https" secure="true"
+               clientAuth="false" sslProtocol="TLS" />
+     --> 
+ 
+     <!--  Define a Coyote/JK2 AJP 1.3 Connector on port 8009  --> 
+     <!--  在端口8009上定义一个Coyote/JK2 AJP 1.3连接器  --> 
+     < Connector  port ="8009" 
+               enableLookups ="false"  redirectPort ="8443"  debug ="0" 
+               protocol ="AJP/1.3"   /> 
+ 
+     <!--  Define a Proxied HTTP/1.1 Connector on port 8082  --> 
+     <!--  在8082端口上定义一个代理HTTP/1.1连接器  --> 
+     <!--  See proxy documentation for more information about using this.  --> 
+     <!--  参见代理文档以取得这里使用属性的更多的信息。  --> 
+     <!-- 
+    <Connector port="8082"
+               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+               enableLookups="false"
+               acceptCount="100" debug="0" connectionTimeout="20000"
+               proxyPort="80" disableUploadTimeout="true" />
+     --> 
+ 
+     <!--  An Engine represents the entry point (within Catalina) that processes
+         every request. The Engine implementation for Tomcat stand alone
+         analyzes the HTTP headers included with the request, and passes them
+         on to the appropriate Host (virtual host).  --> 
+     <!--  一个“Engine”（引擎）代表处理每个请求的入口点（在Catalina内）。这个Tomcat
+         的标准独立引擎实现分析包含在请求中的HTTP头信息，并将请求传送到适当的主机
+         或虚拟主机上。 --> 
+ 
+     <!--  You should set jvmRoute to support load-balancing via JK/JK2 ie :
+    <Engine name="Standalone" defaultHost="localhost" debug="0" jvmRoute="jvm1">
+     --> 
+     <!--  你应该这样设置jvmRoute以便在JK/JK2通道上支持负载平衡：
+    <Engine name="Standalone" defaultHost="localhost" debug="0" jvmRoute="jvm1">
+     --> 
+         
+     <!--  Define the top level container in our container hierarchy  --> 
+     <!--  在我们的容器体系中定义最高级别的容器  --> 
+     < Engine  name ="Catalina"  defaultHost ="localhost"  debug ="0" > 
+ 
+       <!--  The request dumper valve dumps useful debugging information about
+           the request headers and cookies that were received, and the response
+           headers and cookies that were sent, for all requests received by
+           this instance of Tomcat. If you care only about requests to a
+           particular virtual host, or a particular application, nest this
+           element inside the corresponding <Host> or <Context> entry instead.
+
+           For a similar mechanism that is portable to all Servlet 2.4
+           containers, check out the "RequestDumperFilter" Filter in the
+           example application (the source for this filter may be found in
+           "$CATALINA_HOME/webapps/examples/WEB-INF/classes/filters").
+
+           Request dumping is disabled by default. Uncomment the following
+           element to enable it.  --> 
+       <!--  请求转储器值转储非常有用的通过Tomcat这个实例接收到的所有请求的，关于
+           接收到的请求头和cookies，以及发送出的回应头和cookies的调试信息。如果
+           你只在意一个特定的虚拟主机或者一个特定应用程序的请求，在对应的<Host>
+           或<Context>入口中套用这个元素。
+           
+           对于所有的Servlet（小服务程序）2.4来所，在示例程序中检验
+           “RequestDumperFilter”过滤是非常容易的（这个过滤器源代码可以在
+           “$CATALINA_HOME/webapps/examples/WEB-INF/classes/filters”下找到。
+           
+           请求转储默认情况下是关闭的，如果要使用它，取消下面行的注释符。 --> 
+       <!-- 
+      <Valve className="org.apache.catalina.valves.RequestDumperValve"/>
+       --> 
+ 
+       <!--  Global logger unless overridden at lower levels  --> 
+       <!--  全局日志设置，除非在更低的级别上覆盖它的设置  --> 
+       < Logger  className ="org.apache.catalina.logger.FileLogger" 
+              prefix ="catalina_log."  suffix =".txt" 
+              timestamp ="true" /> 
+ 
+       <!--  Because this Realm is here, an instance will be shared globally  --> 
+       <!--  因为这个Realm（区域）在这儿，因此这个实例将被全局共享。  --> 
+ 
+       <!--  This Realm uses the UserDatabase configured in the global JNDI
+           resources under the key "UserDatabase". Any edits
+           that are performed against this UserDatabase are immediately
+           available for use by the Realm.  --> 
+       <!--  这个Realm（区域）使用在全局JNDI资源下，由“UserDatabase”配置的用户
+           数据库。通过使用Realm将使对于这个用户数据库的任何编辑都将会立即可用
+      <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+                 debug="0" resourceName="UserDatabase"/>
+
+      <!-- Comment out the old realm but leave here for now in case we
+           need to go back quickly  --> 
+       <!--  注释掉旧有的Realm以便我们能很快速的恢复旧有配置。  --> 
+       <!-- 
+      <Realm className="org.apache.catalina.realm.MemoryRealm" />
+       --> 
+ 
+       <!--  Replace the above Realm with one of the following to get a Realm
+           stored in a database and accessed via JDBC  --> 
+       <!--  下面的属性用于从储存在数据库或从JDBC通道中得到的Realm以取代上面的
+           Realm配置。 --> 
+ 
+       <!-- 
+      <Realm className="org.apache.catalina.realm.JDBCRealm" debug="99"
+             driverName="org.gjt.mm.mysql.Driver"
+          connectionURL="jdbc:mysql://localhost/authority"
+         connectionName="test" connectionPassword="test"
+              userTable="users" userNameCol="user_name" userCredCol="user_pass"
+          userRoleTable="user_roles" roleNameCol="role_name" />
+       --> 
+ 
+       <!-- 
+      <Realm className="org.apache.catalina.realm.JDBCRealm" debug="99"
+             driverName="oracle.jdbc.driver.OracleDriver"
+          connectionURL="jdbc:oracle:thin:@ntserver:1521:ORCL"
+         connectionName="scott" connectionPassword="tiger"
+              userTable="users" userNameCol="user_name" userCredCol="user_pass"
+          userRoleTable="user_roles" roleNameCol="role_name" />
+       --> 
+ 
+       <!-- 
+      <Realm className="org.apache.catalina.realm.JDBCRealm" debug="99"
+             driverName="sun.jdbc.odbc.JdbcOdbcDriver"
+          connectionURL="jdbc:odbc:CATALINA"
+              userTable="users" userNameCol="user_name" userCredCol="user_pass"
+          userRoleTable="user_roles" roleNameCol="role_name" />
+       --> 
+ 
+       <!--  Define the default virtual host
+           Note: XML Schema validation will not work with Xerces 2.2.
+        --> 
+       <!--  定义默认的虚拟主机
+           注意：XML模式确认将不能与Xerces 2.2同工作。
+       --> 
+       < Host  name ="localhost"  debug ="0"  appBase ="webapps" 
+       unpackWARs ="true"  autoDeploy ="true" 
+       xmlValidation ="false"  xmlNamespaceAware ="false" > 
+ 
+         <!--  Defines a cluster for this node,
+             By defining this element, means that every manager will be changed.
+             So when running a cluster, only make sure that you have webapps in there
+             that need to be clustered and remove the other ones.
+             A cluster has the following parameters:
+             为这个结点定义一个群集，通过定义这个元素，意味着每个管理员都将被改变。
+             因此，当运行一个群集时，只有确认在必须被聚集和移除其他的地方有你的
+             web软件。
+             一个群集有下面这些参数：
+
+             className = the fully qualified name of the cluster class
+             className = 这个群集类的全限定名
+
+             name = a descriptive name for your cluster, can be anything
+             name = 你的群集的描述名，可以是任何描述
+
+             debug = the debug level, higher means more output
+             debug = 调试级别，更高意味着更多的输出
+
+             mcastAddr = the multicast address, has to be the same for all the nodes
+             mcastAddr = 多播地址，所有的节点都必须有同样的多播地址
+
+             mcastPort = the multicast port, has to be the same for all the nodes
+             mcastPort = 多播端口，对所有的节点都必须有同样的多播端口
+             
+             mcastBindAddr = bind the multicast socket to a specific address
+             mcastBindAddr = 绑定多播套接字到一个指定的地址
+             
+             mcastTTL = the multicast TTL if you want to limit your broadcast
+             mcastTTL = 多播生存期，如果你想要限制你的广播的话
+             
+             mcastSoTimeout = the multicast readtimeout
+             mcastSoTimeout = 多播读取超时
+
+             mcastFrequency = the number of milliseconds in between sending a "I'm alive" heartbeat
+             mcastFrequency = 发送“I'm alive”（我还活着）信息的间隔毫秒数
+
+             mcastDropTime = the number a milliseconds before a node is considered "dead" if no heartbeat is received
+             mcastDropTime = 多长时间没有收到“I'm alive”就将这个节点标识为死节点（单位：毫秒）
+
+             tcpThreadCount = the number of threads to handle incoming replication requests, optimal would be the same amount of threads as nodes
+             tcpThreadCount = 用于处理重复引入请求的线程数，最好是每个节点都有相同的线程数
+
+             tcpListenAddress = the listen address (bind address) for TCP cluster request on this host,
+                                in case of multiple ethernet cards.
+                                auto means that address becomes
+                                InetAddress.getLocalHost().getHostAddress()
+             tcpListenAddress = 在有多块以太网卡的主机上的监听TCP群集请求的地址（绑定地址），
+                                auto意味着地址由InetAddress.getLocalHost().getHostAddress()取得。
+
+             tcpListenPort = the tcp listen port
+             tcpListenPort = tcp监听端口
+
+             tcpSelectorTimeout = the timeout (ms) for the Selector.select() method in case the OS
+                                  has a wakup bug in java.nio. Set to 0 for no timeout
+             tcpSelectorTimeout = 在操作系统中有java.nio唤醒错的情况下，使用Selector.select()的超时
+                                  毫秒数。设为0则没有超时限制
+
+             printToScreen = true means that managers will also print to std.out
+             printToScreen = true意味着管理员的相关信息也将打印输出到std.out
+
+             expireSessionsOnShutdown = true means that
+             expireSessionsOnShutdown = true 意味着?????
+
+             useDirtyFlag = true means that we only replicate a session after setAttribute,removeAttribute has been called.
+                            false means to replicate the session after each request.
+                            false means that replication would work for the following piece of code:
+                            <%
+                            HashMap map = (HashMap)session.getAttribute("map");
+                            map.put("key","value");
+                            %>
+             useDirtyFlag = true意味着我们只能在调用setAttribute，removeAttribute后才能复制一个会话；
+                            false意味着在每个请求后复制会话。
+                            false意味着复制将以下列代码方式工作：
+                            <%
+                            HashMap map = (HashMap)session.getAttribute("map");
+                            map.put("key","value");
+                            %>
+                            
+             replicationMode = can be either 'pooled', 'synchronous' or 'asynchronous'.
+                               * Pooled means that the replication happens using several sockets in a synchronous way. Ie, the data gets replicated, then the request return. This is the same as the 'synchronous' setting except it uses a pool of sockets, hence it is multithreaded. This is the fastest and safest configuration. To use this, also increase the nr of tcp threads that you have dealing with replication.
+                               * Synchronous means that the thread that executes the request, is also the
+                               thread the replicates the data to the other nodes, and will not return until all
+                               nodes have received the information.
+                               * Asynchronous means that there is a specific 'sender' thread for each cluster node,
+                               so the request thread will queue the replication request into a "smart" queue,
+                               and then return to the client.
+                               The "smart" queue is a queue where when a session is added to the queue, and the same session
+                               already exists in the queue from a previous request, that session will be replaced
+                               in the queue instead of replicating two requests. This almost never happens, unless there is a
+                               large network delay.
+             replicationMode = 可以是“pooled”、“synchronous”或者“asynchronous”
+                               * Pooled意味着在多个套接字上同步进行复制。例如，先复制数据，然后请求返回。
+                               这与“synchronous”相同，除了它使用一个套接字池，因此，它是多线程的。它是
+                               最快和最高级的设置，使用这个配置也增加了处理复制的tcp线程的域。
+                               * Synchronous指执行请求的线程，它也是向其他节点复制数据的线程，并且直到
+                               所有的节点都己经收到信息后才返回。
+                               * Asynchronous，对每个群集节点而言，这是一个特别的“sender”（发送者）线程，
+                               因此请求线程将复制请求排队到一个小队列中，然后，返回给用户。
+                               这个小队列是一个当会话被添加到队列中，而从先前的请求中，同一个会话己经存在
+                               ，这个会话将被放置在队列中以代替重复的两个请求。这几乎从不会发生，除非存在
+                               较大的网络延迟。
+         --> 
+         <!-- 
+            When configuring for clustering, you also add in a valve to catch all the requests
+            coming in, at the end of the request, the session may or may not be replicated.
+            A session is replicated if and only if all the conditions are met:
+            1. useDirtyFlag is true or setAttribute or removeAttribute has been called AND
+            2. a session exists (has been created)
+            3. the request is not trapped by the "filter" attribute
+
+            The filter attribute is to filter out requests that could not modify the session,
+            hence we don't replicate the session after the end of this request.
+            The filter is negative, ie, anything you put in the filter, you mean to filter out,
+            ie, no replication will be done on requests that match one of the filters.
+            The filter attribute is delimited by ;, so you can't escape out ; even if you wanted to.
+
+            filter=".*\.gif;.*\.js;" means that we will not replicate the session after requests with the URI
+            ending with .gif and .js are intercepted.
+         --> 
+         <!--  当配置群集时，你也添加一个值来捕获所有传入的请求，在请求结束时，这个会话可能被子复制，
+             也可能不被复制。一个会话是否复制取决于下列条件是否发生：
+             1. useDirtyFlag为真，或者setAttribute或者removeAttribute己经被调用。
+             2. 会话己经存在（己经被创建了）。
+             3. 请求没有被“filter”属性所捕获。
+             
+             这个filter（过滤器）属性用于过滤那些不能修改会话的请求，因此，我们在这个请求结束后不复制
+             会主。这个过滤器是消极的，例如，你向过滤器发送了一些东西，然后被过滤出去，在那个匹配的过
+             滤器上不会发生复制。
+             过滤器属性以分号为分隔，因此你不能换行，即使你想这么做。
+             
+             filter=".*\.gif;.*\.js;"意味着在进行以.gif和.js结束的URI请求后不复制会话。
+        
+        <!--
+        <Cluster className="org.apache.catalina.cluster.tcp.SimpleTcpCluster"
+                 managerClassName="org.apache.catalina.cluster.session.DeltaManager"
+                 expireSessionsOnShutdown="false"
+                 useDirtyFlag="true">
+
+            <Membership
+                className="org.apache.catalina.cluster.mcast.McastService"
+                mcastAddr="228.0.0.4"
+                mcastPort="45564"
+                mcastFrequency="500"
+                mcastDropTime="3000"/>
+
+            <Receiver
+                className="org.apache.catalina.cluster.tcp.ReplicationListener"
+                tcpListenAddress="auto"
+                tcpListenPort="4001"
+                tcpSelectorTimeout="100"
+                tcpThreadCount="6"/>
+
+            <Sender
+                className="org.apache.catalina.cluster.tcp.ReplicationTransmitter"
+                replicationMode="pooled"/>
+
+            <Valve className="org.apache.catalina.cluster.tcp.ReplicationValve"
+                   filter=".*\.gif;.*\.js;.*\.jpg;.*\.htm;.*\.html;.*\.txt;"/>
+        </Cluster>
+         --> 
+ 
+ 
+ 
+         <!--  Normally, users must authenticate themselves to each web app
+             individually. Uncomment the following entry if you would like
+             a user to be authenticated the first time they encounter a
+             resource protected by a security constraint, and then have that
+             user identity maintained across *all* web applications contained
+             in this virtual host.  --> 
+         <!--  通常，对每一个应用程序，用户必须逐个的认证他们自己。当他们遇到被
+             某种安全约束所保护的资源时，如果你想让用户只在第一次被认证，那么，
+             取消下面入口行的注释，然后在这个虚拟主机中包含这个用户的，横跨所有
+             web应用程序的用户身份识别。 --> 
+             
+         <!-- 
+        <Valve className="org.apache.catalina.authenticator.SingleSignOn"
+                   debug="0"/>
+         --> 
+ 
+         <!--  Access log processes all requests for this virtual host. By
+             default, log files are created in the "logs" directory relative to
+             $CATALINA_HOME. If you wish, you can specify a different
+             directory with the "directory" attribute. Specify either a relative
+             (to $CATALINA_HOME) or absolute path to the desired directory.
+         --> 
+         <!--  这个虚拟主机的所有请求的访问日志过程。默认情况下，日志文件被创建在相对
+             于$CATALINA_HOME目录下的logs目录下。通过directory属性，你也可以指定一个
+             不同的目录，如果你想的话。可以使用相对路径（相对于$CATALINA_HOME），也
+             可以使用绝对路径。 --> 
+         <!-- 
+        <Valve className="org.apache.catalina.valves.AccessLogValve"
+                 directory="logs" prefix="localhost_access_log." suffix=".txt"
+                 pattern="common" resolveHosts="false"/>
+         --> 
+ 
+         <!--  Logger shared by all Contexts related to this virtual host. By
+             default (when using FileLogger), log files are created in the "logs"
+             directory relative to $CATALINA_HOME. If you wish, you can specify
+             a different directory with the "directory" attribute. Specify either a
+             relative (to $CATALINA_HOME) or absolute path to the desired
+             directory. --> 
+         <!--  与这个虚拟主机有关系所有上下文所共享的日志。默认情况下（使用FileLogger时），
+             日志文件被创建在相对于$CATALINA_HOME目录下的logs目录下。如果你希望，你也可
+             以给directory指定一个不同的路径。可以使用相对于$CATALINA_HOME的相对路径，也
+             可以使用绝对路径。
+        <Logger className="org.apache.catalina.logger.FileLogger"
+                 directory="logs" prefix="localhost_log." suffix=".txt"
+            timestamp="true"/>
+
+      </Host>
+
+    </Engine>
+
+  </Service>
+
+</Server>  

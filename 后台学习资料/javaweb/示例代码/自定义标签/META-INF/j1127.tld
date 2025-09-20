@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+    
+  <description>j1127</description>
+  <display-name>j1127</display-name>
+  <tlib-version>1.0</tlib-version>
+  <short-name>j</short-name>
+  <uri>http://www.ambow.com</uri>
+
+  <tag>
+  	<description>
+  		sum of two numbers
+  	</description>
+  	
+  	<name>add2</name>
+  	<tag-class>tags.TestTag</tag-class>
+  	<body-content>empty</body-content>
+  	<attribute>
+  		<name>a1</name>
+  		<required>true</required>
+  		<rtexprvalue>true</rtexprvalue>
+  		<type>int</type>
+  	</attribute>
+  	<attribute>
+  		<name>a2</name>
+  		<required>false</required>
+  		<rtexprvalue>false</rtexprvalue>
+  		<type>int</type>
+  	</attribute>
+  </tag>
+
+</taglib>

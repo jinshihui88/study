@@ -1,0 +1,22 @@
+1. 上传文件时获取不到form表单的值
+    a.使用ServletFileUpload类时，在执行过parseRequest方法之后，从FileItem类的对象里获取表单的值
+    b.使用SmartUpload类时，在执行过upload()方法之后，执行getRequest()方法获得request对象然后获取表单的值
+
+2. 下载文件时中文文件名乱码问题：
+    a. 在tomcat的server.xml配置文件这样写 
+	<Connector   port= "8080"  redirectPort= "8443"  
+		     connectionTimeout= "20000 "   disableUploadTimeout="true"   URIEncoding= "UTF-8"  
+ 		     useBodyEncodingForURI= "true "/> 
+
+    b.  String   fileName   =   new   String( "中文文件名 ".getBytes( "GBK "), "iso-8859-1 "); 
+	response.setContentType( "application/x-octetstream;charset=gb2312 "); 
+                //response.setHeader( "Content-disposition ", "attachment;filename= " + URLEncoder.encode(fileName, "GBK ")   +   " "); 
+                response.setHeader( "Content-disposition ", "attachment;filename= " + fileName + " "); 
+                OutputStream   os   =   response.getOutputStream(); 
+		os.write(fileName.getBytes()); 
+
+    c. MimeUtility.encodeWord("中文.txt");
+
+    d. response.setHeader("Content-Disposition", "attachment; filename=" + java.net.URLEncoder.encode(fileName, "UTF-8"));
+
+
