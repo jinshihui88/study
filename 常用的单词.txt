@@ -1,0 +1,1421 @@
+traceability 可追踪性
+against 反对、靠 prep
+reschedule 重新安排、重新计划
+go through 通过
+comply 遵守、遵从 vi
+refrain 避免、克制 vi
+thru 通过、经过 prep
+prohibit 禁止、阻止 vt
+panic 恐慌、惊恐 vt
+multicast 多播、组播
+dropin 掉入、插入
+edition 版本
+
+supply 提供、供给 vt
+bring up  打开、提出
+JNI (Java Native Interface)
+Problematic 有问题的 adj
+Spotted 发现 vt
+compulsory 强制
+ongoing 进行的 adj
+enqueue 队列 n 入队vi
+coupled 耦合的 adj
+Connectors 连接器
+dequeue 出队 vi
+purge 清理、清除内存数据
+openwire 明线、裸线
+wire 线、导线 n
+uptime 显示系统运行时间
+transcript 成绩单
+woes 悲伤、困境
+quiz 测试
+mishandling 处理不当的
+replicate 复制 vt
+replicas 副本 n
+
+improve 改善、增进 vt
+Indeed 事实上 的确
+reside 居住、存在、驻留
+Finalise 敲定、使...结束 vt
+Artificially 人为地、人工地 adv
+
+FAQ 常见的问题
+promotion 提升、促销
+Fest 固定的
+APD 新加坡公司的名字
+Journey 旅行
+intervention 介入、妨碍 n
+automate 使自动化、使自动操作 vt
+Got it 明白了
+Here you go 给你、这是你要的
+revise 修改 n
+designate 指定、指派 vt
+shear 剪切 vt
+drop 降低、终止 vt
+intellisense 智能感知、智能提示
+comma 逗号
+line breaks 换行符
+non production warnings 没有生产的警告
+diff 用于比较两个文件的不同、差异、区别
+in-force 有效的
+is applied for 被应用于
+
+directory 目录
+privilege 特权、优待
+modular 模块化的
+supplement 补充 vt
+utilize 利用
+note 注意、记录 vt
+contact 联系 vt
+switchable 可切换的、有开关控制的 adj
+applicable 合适的、可适用的
+Once again 再一次
+As mentioned 正如前面提到的
+PII 个人可标识信息
+counterparty 交易对手
+outbound 出站的、向外去的
+intended 预期的、有意的
+function 运行、活动 vi 功能、函数 n
+decrypt  解密 vt
+
+lead 领导、导致、引导 vi 带头的、最重要的 adj
+further 进一步 adv
+till 直到...为止 conj
+hold 持有、保存、保持 vt
+opt 选择 vi
+opt in 选择加入、参加
+amend 修改
+estimate 估计、估价 vi
+consent 同意、赞成 n
+Subsequently 随后 adv
+behaviour 行为
+inspector 检测
+faster 更快的 adj
+jump to 跳转到
+inc 股份有限公司
+IM 即时通讯
+facepalm 捂脸
+
+quote 引用、报价
+Cover amount 保险额
+cover 覆盖、给..投保
+put in 提出、提交
+make sense 有意义、
+how much 多少钱
+prepopulate 预填充
+come through 通过、经历
+chat 聊天
+Qualifying 具有资格的 adj
+JTA (Java Transaction API)
+transient 瞬态
+generator 生产者、发生器
+allocation 分配、配置
+elsewhere 在其他地方
+get to know 知道、了解
+
+Initiate 开始
+apostrophe 省略号
+preceded 领先、在..之前
+collation 排序规则
+collation name sql中的排序规则
+On Daily basis 每天
+Innovation 创新
+underlying 潜在的、根本的、在下面的
+agency 代理机构
+agent 代理人
+clustered 聚集、聚合
+ease of usage 方便使用
+Wellness 健康
+gap 差距、缺口
+key 键入、锁上
+as per 按照
+dummy record 假记录
+Worst case 最糟糕的情况
+cryptography 密码学
+instead by  代替
+lightweight 轻量级
+bouncy 快活的、有弹性的
+castle 城堡
+
+
+millisecond  毫秒
+normalize 使正常化；使规格化 vt
+up 增加、加速、启动 vt
+inodes 索引节点
+go for 争取
+Drop us 给我们
+explorer 浏览器
+overlay 覆盖图、覆盖
+inclusive 包含的
+exclusive 排除的
+detached 分离的、分开的
+Binding 绑定、装订
+deprecated 废弃的
+denote 表示、指示
+rescan 重新扫描
+workbook 工作簿
+sheet 表格
+physically 物理上的
+represent 表示、代表
+New Zealand 新西兰
+
+soonest 最快的
+Thanks a lot 非常感谢
+B/E 后端
+F/E 前端
+payload 有效载荷
+make as deployable 成为可部署
+used to 用于、过去经常
+conduct 进行
+recursive 递归
+warehouse 仓库
+period 周期
+as below 如下
+raw data 原始数据
+qualify 修饰、限定、具有资格 vt
+daily rolling 每天滚动
+rolling 滚动、旋转
+trouble shooting 故障排除
+delighted 高兴的
+As usual 像往常一样
+
+workflow 工作流程
+Audit 审计
+AuditTrial 审计跟踪
+trial 试验、试用期
+on behalf of 代表
+expect vt 期望 指望
+expected  预期的、预料的 adj
+auth 身份认证
+negate 否定
+iterable 迭代器
+consumer 消费者
+bundle 包、束；捆
+farewell 告别、再见
+courage 勇气
+
+rectify 纠正
+apply to 应用在
+apply 申请、应用
+onwards 向前、在前面
+Periodic recovery 周期性恢复
+Passivation 钝化
+passivate 使钝化 vt
+invocation 调用
+interval 时间间隔
+state 状态
+lambda 匿名函数
+relayed to  传送到
+relay 传递
+predicate 断言、断定
+as if  好像、似乎
+
+temporal 临时的、时间的
+tick the box 勾选框
+initiative 主动的、自发的
+build up 建立
+per 每、按照
+recap 回顾、重述
+Utilization 利用、使用
+timely 及时的、适时的
+
+As I have mentioned earlier 正如我之前提到的
+expose 暴露、显示
+CLI （command-line interface）命令行界面
+whom 谁
+SMS 短信服务
+docker 容器
+daemon 后台程序、守护进程
+use with caution 请小心使用
+swarm 集群
+whitelisting 白名单
+miscellaneous 混杂的、各种各样的
+in the loops 在消息圈内
+MY 马来西亚
+Campaign 运动、活动 n
+unblock 开启、接通
+Explicitly 显示的、明确的
+
+
+be arranged to  被安排
+RELE 法则
+STS（Spring Tool Suite）Spring工具套件
+dispatcher 转发、调度程序
+Introspector 内省、反省
+mapper 映射器
+cron 时间单位
+ruleengine 规则引擎
+surname 姓
+equivalent 等价的、相等的 adj
+blushing 脸红的 adj
+produce 生产、创作 vt
+OSS (open source software) 开源软件
+
+Appreciate 欣赏、感激
+Third-Party 第三方
+address 提出、处理 vt 地址、演讲 n
+Vulnerable 易受攻击的、有弱点的
+hence 因此
+conclude 推断、决定
+impact 影响
+simulate 模仿、假装
+authorization 授权、批准
+DTO 数据传输对象
+RCPT 用于标识邮件的收件人；以 RCPT TO: 的形式使用
+crypto 加密
+termination 结束、终止
+reduced version 缩减版本、降低版本
+relative 相对的
+infrastructure 基础结构
+dist 分配、发布
+
+last 最近的、最新的 adj
+extract 提取
+relevant 有关的
+invalidate 失效
+facade 正面、表面
+middleware 中间件
+hook 拦截、钩子
+compact 紧凑的、紧密的
+algorithm 算法 n
+lexical 词汇、词法
+claim  要求、声称、认领
+JWA（JSON Web Algorithms）json web算法
+topic 主题、话题
+JWS（JSON Web Signature） jwt签名
+Signature 签名
+primary 主要的、基本的
+secret 秘钥
+
+stakeholder 利益相关者
+consumption 消费、消耗
+worksheet 工作表
+deficiency 缺陷、不足
+classification 分类、类别
+fallback 回退
+Vitality 活力、生命力
+whilst 同时
+charge 费用、电荷 n 使充电、承担 vt
+wrongful 不正当的、不合法的 adj
+back 支持、后退 vt 后面、背部 n
+hint 暗示、示意
+preference 偏好、偏爱
+
+LMS (Learning Management System) 学习管理系统
+board 木板、甲板 n 上（飞机、车、船等）
+refactor 重构
+Transaction 事务
+bookmark 书签、标记
+assembly 组装、集合
+CR（change request） 变更请求
+decline 谢绝、婉拒
+Client-Side 客户端
+route 路线、航线
+closely 紧密的、密切的
+command 命令、指令
+breakfix 故障修复
+Implementer 实现者
+Pre-requisites 预备条件
+
+likelihood 可能性 n
+origin 起源、开端 n
+CORS (Cross-origin resource sharing) 跨域资源共享
+cross-origin 跨域
+respond 回答、响应
+Unsupported 不支持的
+hierarchical 分层的、分等级的
+GA 正式发布版本
+repackage 重新打包
+shutdown 停止系统
+fatal 致命的、重大的
+candidate 候选的
+connector 连接器
+secure 安全、得到
+favicon 网站图标
+socket 套接字
+oriented 导向、面向对象
+STOMP（Simple (or Streaming) Text Oriented Message Protocol ） 简单面向文本消息协议
+wisely 明智的、聪明的
+legacy version 旧版本
+explicit 明确的、清楚的
+
+jack 插座 n 增加、提醒 vt
+helper 助手、帮手
+ratio 比率、比例
+visible  可见的 adj
+catenate 连接
+utility 实用的、通用的 adj
+Experimental 实验的、根据实验的
+eager 渴望的、热切的
+validator 验证器
+specify 指定、说明 vt
+assert 断言、维护 vt
+corresponds to 对应于、相当于
+
+representation 表现、代表
+offset 偏移、位移
+standalone 单独的、独立的 adj
+Accelerated 加速的、加快的 adj
+outstanding 杰出的、未解决的 adj
+deactivate 禁用、无效
+capitalize 首字母大写
+toolkit 工具箱
+widget 小部件，小工具
+persistence 持久化
+automatic 自动的
+turnaround 转变、转向
+subclipse 插件安装使用
+
+shelve 搁置、罢免 vt
+revalidation  重新生效
+validation  确认、验证
+enclosed 封闭的、被附上的
+status 状态、情形
+discount 折扣
+occupation 职业、工作
+trauma 创伤、外伤
+rate 费率、比率
+modal 模式的、情形的 adj
+Accordingly 因此、于是 adv 相应的 adj
+gender 性别
+paste 粘贴
+formula 公式、准则
+
+mock  模拟
+fragment 片段、分段
+defer 推迟、延期
+workfile 工作文件
+lookup 查找
+assign 分配、把信息从一个人转给另一个人
+promote 促进、提升 vt
+attack 攻击
+instrument 仪器、工具
+stack trace 堆栈跟踪
+
+permanent 永久的
+chain 链、链条
+implicit 隐式的
+handler  处理器
+Interceptor 拦截器
+adapter 适配器
+advice 建议
+binder 绑定、粘合剂
+instantiate 实例化
+multipart 多部分的
+registery 注册表
+tracker 跟踪器
+demo 演示
+illustrate 说明、表明 vt
+deliberately 故意的 adv
+highlight 强调、突出vt
+send out 发送、发出
+miss out 错过
+helpdesk 帮助台
+recipient 接受者
+recaptcha 验证码
+keep going 继续
+
+reproduce 复制
+Tentatively 暂时
+prepare 准备、预备
+in addition to 除了
+mitigation 缓解、减轻
+weakness 弱点
+expiry 逾期
+unpack 解压
+pretty 漂亮的、可爱的 adj 相当 adv
+hire 出租、雇用 vt
+bind 绑定 vt
+stereotype 固定的形式
+syntactically 语法上 adv
+initiator 启动程序
+appender 输出目的地
+erroneous 错误的
+context 环境、上下文
+derived 导出、派生
+assistance 帮助
+
+fulfill 实现、完成 vt
+at this moment 现在、此刻
+CA 证书认证中心
+Authority 权威、权力、授权
+CER文件：用于存储公钥证书的文件格式
+synchronize 使同步 vt
+acknowledgement 承认、确认
+booklet 手册
+withdraw 取回、收回 v
+membership 会员身份 n
+Declaration 公告、声明 n
+Authorisation 授权、批准 n
+authorise 授权、批准 vt
+GMT 格林尼治所在时间
+LAN 局域网
+shell 外壳
+singleton  单例
+prototype 原型
+annotated 带注解的
+logic 逻辑
+authentication 身份验证
+Authenticator 认证者
+
+
+Certificate 证书
+CSR（Certificate Secure Request） 证书安全请求文件
+issued to 颁发给
+RSA 公钥加密算法（非对称加密算法）
+sign 签字、签名
+Serverhold 禁止解析
+invasive 侵略性的、攻击性的 adj
+in the first half of this year 今年上半年
+hardcoding 硬编码
+proceed 进行 继续 vi
+be populated with 用....填充
+
+expert 专家、行家 n
+followed by 紧随其后的是
+accuracy 准确性 n
+redundant 多余的、累赘的 adj
+past 过去的、以前的 adj 超过、超出 prep 
+arrows 箭头 n
+security 安全 n
+Regulatory 监管的 adj
+compliance 服从、合规 n
+either or 不是...就是..  ..或..
+
+sign-in 登录
+CVSS（Common Vulnerability Scoring System） 通用漏洞评分系统
+exact 精确的、精密的
+Variants 变型、变体
+anti 反对者、反对 n
+criteria 标准、条件
+lingo 术语 n
+toolbar 工具栏 
+without 没有
+tab 选项卡
+complete  完成 vt 
+
+case 实例、情况
+case-sensitive 区分大小写的 adj
+sensitive 敏感的 adj
+treat 对待、处理 v 
+intranet 企业内部网 n
+commerce 商务、商业
+rule out 排除
+Temporarily 暂时
+contest 比赛、竞赛 n
+performance 表现、执行 n
+insecure 不安全的、不稳定的
+chunked 分块、长条快的
+de-activated 没有激活
+endangered 遭受危险的、危机
+rational 理性的、合理的
+Objective 目标
+procedure 程度、过程、步骤
+quest 探索、寻找 vt
+appropriate 适当的
+disconnect 断开、中断 vt
+destination 目标、终点
+
+
+
+decompiler 反编译器
+transparent 透明的
+rubbish 垃圾
+account for 说明、导致、（在数量、比例上） 占
+notably 尤其 adv
+Stone Caves 石窟
+gourmand 喜欢吃喝的人  美食家
+reputed 有名誉的
+vinegar 醋
+delicacies 佳肴
+compilation 编译
+instance 实例
+Dumpling 饺子
+Sausage 香肠
+Mutton 羊肉、绵羊
+accompany 陪伴、伴随
+cuisine 烹饪
+finely 非常的、细微的
+national 国家的
+coal 煤
+mining 采矿
+be aware 了解、明白
+wholesome 健康的
+leisure 空闲的
+of 属于...的、由..构成、关于
+variety 多样化的 n
+kit 工具包
+adequately 充分的
+WCM 网站内容管理系统
+Encoder 编码器
+scroll 滚屏
+reminder 提醒的人
+fetch 取来、拿来
+desired 渴望的、想得到的
+Reward 报酬、报答
+
+
+outcome 结果
+referenced 引用的、参考的
+billiards 台球
+simplify 简化
+reusability 可重用性
+ICE BREAKERS 破冰
+marathons 马拉松
+counter 计数器
+merge 合并
+Due date 到期日
+exemption 解除
+assessment 评估、评价 n
+assess 评估、评定 v
+takeover 接管
+observed  观察、看到 v
+broken 打破、打断 v
+outage 停机
+
+
+attachment 附件 n
+Advisory 公告 n 提供咨询的 adj
+Advisor 顾问 n
+Signatory 签字人
+clarify 说明
+stability 稳定性
+malformed 畸形的、格式错误的
+figure out 弄明白
+Satisfaction 满意
+follow up 跟进、对...采取进一步行动
+take note 注意
+troubleshooting 排除故障
+By the way 顺便说一下
+incident 事件、事变
+mortgage 抵押
+suppress 压制
+initializer 初始化程序
+bootstrap 启动程序
+coordinates 坐标
+milestones 时间表、里程碑
+analys 分析
+shortly 不久
+add-on 附件组件 
+upon 在...上面 当..时候、根据
+BA（Business Analys） 是一种职位，对产品和业务进行分析
+Mr 先生
+Miss 小姐
+Mdm 女士
+Mrs 夫人、太太
+
+venue 会场地点
+taker 接受者
+aware 意识到的
+Stoppage 故障、停止
+Exporter 出口商、输出者
+decorate 装修
+eligible 合格的
+subscribe 订阅
+tier 层
+newer 更新的、最新的
+shift 转移、改变
+tremendous  极大的、巨大的
+cheerful 快乐的、高兴的
+metrics 度量、指标
+Reference 参考
+processor  处理器、处理程序
+Interconnection 互联
+OSI 开放式系统互联
+unify 统一
+mainstream 主流
+holder 持有者、持有人
+markup 标记
+plot 情节
+watch out 小心、注意
+
+comers 来者、有成功希望的人
+case letters 大小写字母
+evaluator 评价者
+evaluate vt 评估、评价
+functionality 功能
+strengthen 加强
+grape 葡萄
+severe 严重的 adj
+domestic 家庭的、国内的 adj
+couples 夫妻、一对 n
+Closure 结束、关闭 n
+boom 繁荣、激增 n
+lift 抬起、提升 vt
+Periodic 周期
+compatibility 兼容性
+skipping 跳过
+Recipients 收件人
+individual 个人
+SCM 软件配置管理
+concurrent 并发
+checksum 校验和 
+effort  工作、努力
+word wrap 自动换行
+custom n习惯、惯例 adj 定做的、定制的
+collapse all 折叠所有
+transition 过渡
+executer 执行人、实施者
+priority 优先级
+whether 是否、可能的选择
+scope 范围、作用域
+configurer 配置者
+placeholder 占位符
+laptop 笔记本电脑
+ah 啊 呀 感叹词
+
+
+Tutorials 教程
+Specialist  专家
+filter 过滤器
+XSS(Cross Site Scripting) 跨站脚本攻击
+XST(Cross Site Tracing) 跨站攻击
+renew 更新
+estimation 估计
+go live 上线
+restriction 限制
+endorse 支持
+entrance 入口、进入
+Whereas 然而
+corresponding 对应的
+work with 与...一起干、从事什么工作
+except 除...之外
+critical 关键的、重要的
+thereby 因此
+malicious 恶意的
+via 通过、经过
+cheat 作弊
+escape 逃脱、泄露、转义
+untrusted 不可信的
+snippets 片段
+vector 向量
+leverage 利用
+pragma 编译指示
+
+violation 违反
+proper 适当的
+Adequate 足够的
+Disclosure 信息批露
+render 渲染、呈现
+alphanumeric 字母数字
+Encryption 加密
+Disposition 安排、配置
+workshop 研究会、讨论会
+proxy 代理
+CST 中部标准时间
+redeploy 重新部署
+mechanisms 机制
+Repository 仓库
+hierarchy 层次结构
+wildcard 通配符
+captcha 验证码
+blocked 阻塞
+profile 配置文件、用户资料
+storage 存储、仓库
+incoming 传入的
+truststore 信任库
+certificate 证书、凭证
+insufficient 不足的
+sufficient 充足的
+dismiss 解散、解雇
+distribution 分配、分布
+acyclic 非循环的
+cyclic 循环
+surefire 准不会错的
+migration 迁移
+check out 检出
+check in 检入
+standby 备用的、可信赖的人
+revert back to 回复到
+launch 开始启动（应用程序）
+inject 注入
+phase 阶段
+vendor 供应商
+submission 提交
+impacted 影响
+Reallocation 重新分配
+executive 执行
+assets 资产、资源
+key findings 重要发现
+assumption 假定
+limitation 限制
+vulnerability 脆弱、漏洞
+vulnerability description format 漏洞描述格式
+conclusion 结论
+circumstances 情况
+excluded 排除
+exclusion 排除、拒绝
+CSRF（Cross-site request forgery） 跨站请求伪造
+forgery 伪造
+forge 伪造
+
+deter 阻止
+Methodology 方法论
+exploited 利用
+risk 危险
+Mitigation 缓解
+permit 许可、允许
+illustration 插图、说明
+depicts 描述
+sanitized 消毒、审查
+disallowed 不接受、不准
+allow 允许
+Fixation 固着、固定
+fix 修理、修复
+
+
+engagement 参与度
+all at once 突然
+surround 围绕
+intellectualism 机智主义
+reset 重置
+feedback to 反馈
+enhancement 提高、改进
+enhance 提高、增强
+Delivery Center 交付中心
+data patch 数据块
+patch 打补丁、小块
+issued 发布
+screen shoot 屏幕截图
+timeline 时间表
+remediation 纠正、辅导、修复
+farmer 农民
+farm 种田、务农
+corn 玉米
+corn on the cob 玉米棒子
+chillies 辣椒
+upset 难过的
+double check 再次确认
+aggregator 聚合、整合
+reactor  反应堆
+reindex 重新索引
+final 最终、最后
+Severity Level 严重级别
+rating 评定、评级
+Confidential  保密
+Probability 概率
+Findings 结果
+penetration 渗透、侵入
+penetration test  穿透测试
+dug 挖 （dig的过去式和过去分词）
+mess it up 搞得一团糟
+bomb 炸弹、搞砸
+palette 调色板
+portable 轻便的、手提的
+stable 稳定的
+staging 工作台
+underscore 下划线
+wrapper 包装器
+point out 指出
+downgrade 降级
+prompt 提示
+kindly 请
+referer 引用、推荐人
+refer to 参考
+straightforward 直接的、明确的
+exposed 暴露
+aborted 终止、失败
+in advance  提前、预先
+upstream 上游的
+downtime 停机时间
+absolute 绝对的
+marshal 排列、编队
+bound 绑定
+bounded 有界限的、有限制的
+therefore 因此、所以
+require 需要、要求
+ensure 确保、保证
+within 在...里面、在内
+integration 整合、一体化
+up to date 最新的
+JAXP（Java API for XML Processing 处理XML的Java API）
+process 处理、过程
+check in 检查
+no pay leave 没有薪水离开
+anonymize 匿名
+pull 拉
+obsidian 黑曜石这种颜色    
+discard 丢弃
+archetype 模板、原型
+artifact 手工制品、构件
+autowire 自动装配
+exploded 爆炸
+pop out 弹出
+SR：特殊的需求
+Taipei City 台北市
+Assistant 助理
+regards 问候
+sort of 有点、差不多
+baby-friendly 亲和宝宝的
+entertain 招待、款待
+virtually 几乎、实际上
+nowhere 无处、任何地方
+deadlock 死锁
+revision  修订
+head revision 最新版本
+situation 形式
+Sender 发送方
+dummy 仿制品、笨蛋
+pack 打包
+SPRR 特殊的生产运行
+extraction 提取
+Annual Funds Reports and E-Birthday 年度基金报告和电子生日
+Microsite 微博、微地段
+Functional Specification 功能规范
+Specification 规范
+Specific  特定的、明确的
+voucher 凭证
+beverage 饮料
+perks  额外津贴，附带福利
+primitive 原始的
+goals 目标
+classifier 分类器
+exclude 排除
+volume 体积、卷
+operable 可操作的
+Defend 保卫、辩护
+FYI 提供给你的信息
+wrapped search 循环搜索
+wrapped 包裹、覆盖
+
+entry 条目
+revert 恢复
+cast to 投到
+facet 方面
+catalog 目录
+NZ 新西兰
+Excess 多余的
+Premium Rate 保险费率
+premium 保险费、奖金、优质的
+cut off 切断
+week end 一周结束
+release 释放、发布
+User Entries 用户条目
+Failover 故障转移
+savest 挽救、救助
+expire 到期
+Active Directory 活动目录
+temporary 临时的
+Insurance Plans 保险计划
+Recommendation 推荐、建议
+Ranking for Newest 最新排名
+Ranking for Popular 排名为流行的
+ranking 排名
+
+corrupt 腐败、堕落
+prefix 前缀
+suffix 后缀
+delegate 委托、代表
+purchase 购买
+refund 退款、偿还
+offer price 报价
+bid price 买价
+valuation Date 评估日期
+valuation 评价、估价
+SGD 新加坡元
+Currency 货币
+get in touch 取得联系
+salutation 致敬;信函中的称呼.
+life matters 生活事件
+SNAPSHOT 拍快照
+cash value 现金价值
+Scheduler class 调度器类
+scheduler 调度器
+schedule 时间表 vt 安排、计划
+coverage period 覆盖期间
+coverage  覆盖范围
+resolved 解析、分解、解析
+
+Retention 保留、扣留
+
+overdue 过期的、迟到的
+Empowering you to go further 让你走的更远
+Empower 授权、允许
+SQS 优质服务计划
+CMS 内容管理系统
+URS 用户需求说明
+FA 理财顾问
+internal  内部的
+
+Broker 经纪人、代理
+underwriting 承销 保险业
+overall 整体、全部的
+assume 假定、假想
+Annual Leave  年假
+Compensation leave 补假
+compensation 补偿、报酬
+User Acceptance testing 用户验收测试
+root cause 根本原因
+cause 原因n 引起、导致 v
+Resolution 解决
+assignees 分配给任务的人
+you may be a victim of software counterfeiting 你可能是盗版软件的受害者
+preserve log 保存日志
+disable cache 禁用缓存
+permission 权限
+victim 受害人、牺牲者
+stdout 标准输出
+
+leave request 请假申请
+diagnose 诊断、判定
+issues 问题
+severity 严重程度
+Accessors 访问器
+dashboard 指示板、控制面板
+Specialist 专家
+portal 入口、门户网站
+Unit No 单位编号
+scenario 场景、方案
+mandatory 强制的
+external 外部的
+allocate 分配、指出
+debug 调试
+Credentials 凭证
+decision 判定
+straight 直线
+flowchart 流程图
+propose 提议、建议
+enquiry 查询、询问
+recover 恢复、重新获得
+policyholder 投保人
+endpoint 端点
+inbox  收件箱
+drafts  草稿箱
+sent items 发送的邮件
+deleted Items 删除的邮件
+archive 存档、档案文件
+Junk Email 垃圾邮件
+Outbox 待发箱
+away 离开
+
+inquiry 查询
+under approval 正在批准
+auto registration 自动注册
+indicator 指示器、指标
+Regeneration 重生成
+review 复习、检查
+approver 批准者、审批人
+approval 批准、同意 n
+deny 拒绝
+pending 待定的、未解决的
+unlock 解锁
+unexpected 意外的
+inactive  不活动的、不活跃的
+Fresh Registration 新注册
+screenshot 屏幕截图
+Expiration  终止、截至时间
+policy 政策、保单
+badge 证件、证章
+on time 按时、准时 
+re-open 重开
+retrieve 检索
+handover 移交
+assignment 任务、作业、分配、赋值
+trace 跟踪
+verify 验证
+sign-off 负责人签字
+encrypt 加密
+capture 捕获
+backend 后台
+resume  继续、重新开始
+
+corporate 社会、团体的、公司的
+issue 发行、发布
+elapsed  v 时间过去 adj 过去的
+inherited 继承
+verification 验证
+reflect 反射、反照
+grant 授权
+identify 确认、识别
+trunk 主干
+Postal 邮政
+post  张贴、邮寄 vt
+Unloading 卸载、卸货
+Rainbowify 彩虹化
+Rate this page 评价这个页面
+withhold 扣压、保留
+minus 减去、减法
+throughput 吞吐量
+sharding 分片
+vpc：Virtual Private cloud，虚拟私有云
+congrats 恭喜
+telemetry 遥测
+freemium 免费增值
+camel 骆驼
+postfix 后缀
+codename 代码名称
+rear 后面、背部
+heap 堆
+optimize 优化
+Greater London 大伦敦
+peek 窥视、可见
+pre-built 预建
+renewal 更新
+threshold 临界点、阈值
+LVS（linux virtual server）linux虚拟服务器
+sentinel 哨兵
+scavenge 清除
+OutOfMemory 内存不足
+volatile 易变的
+Synchronous 同步的 adj
+elasticsearch 弹性搜索
+tagline 标语
+Perpetual 永动的、永久的
+Cache Hit Ratio 缓存命中率
+linger 萦绕、徘徊
+poll 轮询、投票
+IOPS(Input/Output Operations Per Second)：每秒的读写次数
+anatomy 解剖学
+spatial 空间
+discord 不和谐的、意见不合 n
+noeviction 不驱逐
+LRU（Least Recently Used）最近最少使用
+watermark 水印
+warm up 暖身、预热
+FIFO（first in first out）先进先出
+opic 
+Accumulator 累加器
+relay log 中继日志
+failback 故障回复
+ephemeral 短暂的
+mutator 突变
+Fair 公平的
+acquire 获得、取得
+degradation 降级
+pack-reused 包装重复使用
+elevated 提高的 adj
+dangling 悬垂的
+Pre-release 预发布
+verbose 冗长的
+reformat 重新格式化
+syntek 合成科技
+drain 流走
+converged 汇集、聚集
+cursor 光标、游标
+enable ligatures 启用连字
+monospaced 等宽
+Typography 排版
+predicates 谓词、断言
+RateLimiter 速率限制器
+locator 定位器
+tenant 租户
+outgoing commits 传出提交
+mutate 变异、修改
+lmperative 至关重要的
+transform 转换
+dispose 处置
+snooze notifications 暂停通知
+unified viewer 统一查看器
+census 人口普查
+sealed types 密封型
+on-prem 本地
+ordinal 序数
+null-check 空检查
+sos 紧急求救信号
+Gregorian 公历
+TRTC：腾讯实时音视频
+presets 预设
+L2TP 第二层隧道协议
+roam 漫游
+
+mute 沉默的	、无声
+match case 区分大小写
+ingress 入口
+exposure 接触、暴露
+wallboard 墙板
+try me 尝试我
+profiling 分析
+pre-receive 预接收
+scratch file 暂存文件
+snowflake 雪花
+Eviction 驱逐
+Shorten command line 缩短命令行
+case insensitive 不区分大小写
+insensitive 不敏感
+village 村
+on-click prompts 点击提示
+testament 证明、证据、遗嘱
+unsigned 无符号的
+commence 开始、着手
+destructive 破坏性的
+duplex 双工
+daemonize 守护线程
+navigate to 导航到
+exponent 指数
+Lint your code 检查代码
+Indentation 缩进
+time-consuming 耗费时间
+play-offs 附加赛
+latency 延迟
+String-argument 字符串参数
+Upgrade to premium 升级到高级版
+Infinite Increase 无线增加
+inventory 库存
+VNC 虚拟网络控制台
+posix 可移植操作系统接口标准
+fit content 合适的内容
+glue 胶水、粘贴
+vending 自动售货
+ternary 三元的
+starvation 饥饿
+curly braces 花括号
+dimension 维度、范围
+Stale branches 过期分支
+pointless 毫无意义的
+decomposition 分解
+recipe 配方
+Blending 混合
+backstage 后台
+typos 拼写错误
+tooltip 工具提示、提示信息
+proofreading 校对
+unpackage 解包
+fold by default 默认折叠
+pump 泵
+zoom level 缩放级别
+mould 模具
+axis 轴
+cokeoven 焦炉
+tamping 捣固
+Breaking changes 突发的变化
+semi：编程中指的就是分号，是一个常见的编程术语。
+emit：发出、发行、发表
+lease：租赁、出租
+plate 盘，碟；一盘（食物）
+code vision 代码愿景
+sync 同步
+elevate 提高、提升
+parentheses 括号
+inlay hints 镶嵌提示
+staff picks 工作人员精选
+varying 变化的
+identical 完全相同的
+balloon notifications 气球通知
+complaint 投诉
+side-by-side 并排
+promotional 促销
+sticky balloon 粘气球
+scheme 方案
+introduce local variable 引入局部变量
+
+unambiguous 明确的
+ambiguous 模糊的
+precision 精确、精度
+multiplicand 被乘数
+positive numbers 正数
+abbreviation 缩写
+conventional 传统的、常规的
+combined 结合、合并
+disjoint 不相交
+raster 栅格
+
+Maintainability 可维护性
+notable 值得注意的、重要的
+inline 内联
+companion 伙伴
+simply type 直接输入
+custody 监护、保管
+case by case 根据具体情况
+bypass 绕过、旁路
+onboarding tips 入职提示
+eta 预计到达时间
+
+This is an unregistered copy 这是一个未注册的副本
+Micrometer 微米
+sanitize 消毒
+Substitutor 替补者
+epoch 时期、时代
+compose 组成、构成
+propagate 传播、宣传
+Archived Versions 存档版本
+deserialize 反序列化
+42mm case 42毫米表壳
+
+Hermès 爱马仕
+prime 主要的
+lightspeed 光速
+Drones 无人机
+mutable 可变的
+expand 扩张、扩大
+begun 开始
+Topology 拓扑
+radius 半径
+replication 复制
+
+cable 电缆
+ident 身份
+neutral 中性的、中立的
+slug 鼻涕虫
+chrono 计时的、长期的
+leapYear 闰年
+grabbing file 抓取文件
+Keep in the loop 保持联系
+add a legacy license 添加旧版许可证
+profiler 分析器
+
+allocator 分配器
+projection 投影
+potentially 潜在
+alpha-numeric 字母数字
+clutter 杂乱
+outages 停电
+deputy 副手、副职
+forum 讨论会
+inline chat 在线聊天
+matcher 匹配器
+
+citation 引文、引用
+speed search 速度搜索
+spam 垃圾邮件
+mnemonic 助记符
+frequency_penalty 频率惩罚
+desform 变形
+deduplicate 去重
+nvidia 英伟达
+antivirus 防病毒
+preinstall 预安装
+shortcut 快捷方式、快捷键
+stderr 标准错误
+visibility 能见度
+penalty 惩罚、罚款
+generative 生成性
+bidirectional 双向
+suomi 芬兰语
+deutsch 德文
+boundary 边界、界限
+alphabetic 字母的
+magyar 匈牙利语
+distill 蒸馏
+present 展示
+spotlight me 聚焦我
+heatmap 热图
+ocean 海洋
+storyboard 故事板
+terminology 术语
+tuple 元组
+diagonal 对角线
+Traceback 追溯
+semicolon 分号
+Trailing 尾随
+frozen 冻结
+diffusion 扩散
+estate 房地产
+acreage 面积
+parity 平价
+rewind 倒带、转回
+sticky lines 粘性线
+crop page 裁剪页面
+crop 庄家、修剪
+interpreter 解释器
+pond 池塘
+ellipsis 省略
+cherry 樱桃
+matrix 矩阵
+applicant 申请人
+overlaps 重叠
+suspended 暂停
+nudge 推动、轻推
+fine-grained 细粒度
+repo-scoped 仓库范围内的
+Seamless 无缝的
+mumbai 孟买
+east 东部
+snooze 暂缓 通常指暂时推迟或忽略提醒、通知或警告的功能
+codebase 代码库
+feel free to reach out 欢迎随时联系我们
+codebase-wide 代码库范围
+privacy 隐私
+Descriptors 描述符
+server-specific 服务器特定
+Proposal 提议
+Emmet 是一个非常流行的前端开发辅助工具/插件，主要用于快速编写 HTML 和 CSS 代码。
+shrink 收缩、缩小
+warranty 保修单、保证
+scout 侦查
+troubleshoot 排除故障
+regex 正则表达式
+lasso tool 套索工具
+overlays 覆盖
+Spend Limit 消费限额
+spend 消费、花费
+freelancer 自由职业者
+condensed 压缩
+viable 可行的
+chip 芯片
+unpublish 取消发布
+cited sources 引用来源
+Takeaways 总结
+curated 精选
+endorsed 认可
+Contribute back 回馈
+additional 额外的、附加的
+Project-wide 项目范围
+monorepos 单体仓库
+ignore 忽略
+unignore 取消忽略
+
+ultra 过度的、极端主义者
+quick question 快速提问
+celsius 摄氏度
+greeting 问候
+flashcards 抽认卡
+passed 已通过
+out of usage 停止使用
+locale 区域设置
+Whiteboard 白板
+pan 平底锅
+arbitrary 随意的
+usage 用法
+Early Access 抢先体验
+Usage-Based 基于使用情况
+to-do list 待办事项清单
+show less 显示较少
+migrate 迁移
+administrative 管理的
+Improperly 不当
+plural 复数
+viable code 可行的代码
+reduce 减少、降低
+Truthiness 真实性
+vibe 氛围
+smart plan 智能计划
+zoom 放大
+zoom in 放大
+cattery 猫舍
+credits 积分
+free tier 免费套餐
+rotate 旋转
+in-person 亲自
+minify 缩小
+escalation 升级
+readme 自述
+cute 可爱的
+bonus 奖金
+Spin up 旋转起来
+Mermaid 美人鱼
+Shipping Address 收件地址
+coalescing 合并
+enchanting 迷人的、妖娆
+statsig 统计
+usage modes 使用模式
+craft 精心编写 / 构建”某些东西
+details transcript 详细记录
+breaking change 重大变更
+elicitation 引出、抽出
+purpose-built 专门构建
+backlog 待完成工作项的优先级列表
+sustain 维持
+jargon 行话
+Playwright 剧作家
+coverage data 覆盖数据
+costume 戏服
+blame 责任、责备
+hit 击中、打
+sibling 兄弟
+mixins 混合
+composables 可组合项
+snippet 片段
+Hoisting 提升
+Browserslist 浏览器列表
+frogs 青蛙
+catch you later 稍后联系你
