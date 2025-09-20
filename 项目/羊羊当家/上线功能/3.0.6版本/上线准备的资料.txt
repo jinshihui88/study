@@ -1,0 +1,15 @@
+sql脚本：
+alter table yy_member_third_auth add phone varchar(32) null after yy_member_id;
+
+nacos白名单：
+
+
+/autha/letter/getWatchIMUserId    --获取手表的IM userID
+/device/noticeReback/callbackAfterSendMsg   --IM发送消息之后回调
+/autha/bindPhoneNumber   --绑定手机号
+
+--re_warning表，增加了read_status字段
+alter table re_warning add read_status char(1) default '2' comment '后台设备端报警信息阅读状态';
+--删除了cron字段
+alter table yy_blood_model drop column cron;
+
