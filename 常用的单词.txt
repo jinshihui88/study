@@ -1420,3 +1420,6 @@ Browserslist 浏览器列表
 frogs 青蛙
 catch you later 稍后联系你
 volume label 卷标
+scaffolding 脚手架
+benchmark 基准
+autoload 自动加载
